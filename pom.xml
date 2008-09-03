@@ -18,12 +18,11 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
+
 	<!-- default properties -->
 	<properties>
-	
 		<maven.compile.source>1.6</maven.compile.source>
 		<maven.compile.target>1.6</maven.compile.target>
-	
 		 <!--
 		Make the deployment protocol pluggable. This allows to switch to
 		other protocols like scpexe, which some users prefer over scp.
@@ -31,6 +30,7 @@
 		<commons.deployment.protocol>scp</commons.deployment.protocol>
 	</properties>
 
+	<!-- additionnal maven repositories -->
 	<repositories>
 		<repository>
 			<id>java.net</id>
@@ -48,46 +48,8 @@
 
 	<build>
 		<!-- final name -->
-		<finalName>${artifactId}</finalName>	
+		<!-- finalName>${artifactId}</finalName -->	
 
-		<!-- plugin management -->
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-gpg-plugin</artifactId>
-					<version>1.0-alpha-3</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-jar-plugin</artifactId>
-					<version>2.1</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>
-						maven-remote-resources-plugin
-					</artifactId>
-					<version>1.0-alpha-6</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-source-plugin</artifactId>
-					<version>2.0.4</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.3</version>
-				</plugin>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-assembly-plugin</artifactId>
-					<version>2.2-beta-1</version>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		
 		<plugins>		
 			<!-- eclipse -->			
 			<plugin>
@@ -95,6 +57,15 @@
 				<artifactId>maven-eclipse-plugin</artifactId>
 				<version>2.5.1</version>
 				<configuration>
+					<!-- add checkstyle to project nature -->
+					<additionalProjectnatures>
+						<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
+					</additionalProjectnatures>
+					<!-- add checkstyle to build -->
+					<buildcommands>
+						<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
+					</buildcommands>
+					
 					<!-- >workspace>${basedir}/..</workspace-->
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
@@ -120,9 +91,32 @@
 							<name>/.settings/org.eclipse.core.runtime.prefs</name>
 							<location>/dev/eclipse/org.eclipse.core.runtime.prefs</location>
 						</file>
+						<!-- Using checkstyle configuration file -->
+						<file>
+							<name>.checkstyle</name>
+							<location>/dev/eclipse/.checkstyle</location>
+						</file>						
 					</additionalConfig>
 				</configuration>
 			</plugin>
+			
+			<!-- checkstyle -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<configuration>
+		             <failOnViolation>true</failOnViolation>
+		             <enableRulesSummary>true</enableRulesSummary>
+		             <configLocation>dev/checkstyle/awd_checkstyle.xml</configLocation>
+				</configuration>
+				<dependencies>
+					<!-- dependency>
+						<groupId>com.example.whizbang</groupId>
+						<artifactId>build-tools</artifactId>
+						<version>1.0</version>
+						</dependency -->
+				</dependencies>
+			</plugin>			
 
 			<!-- compiler -->		
 			<plugin>
@@ -132,7 +126,7 @@
 					<target>${maven.compile.target}</target>
 				</configuration>
 			</plugin>
-			
+
 			<!-- war -->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
@@ -186,6 +180,45 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		
+		<!-- plugin management -->
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-gpg-plugin</artifactId>
+					<version>1.0-alpha-3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>2.1</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>
+						maven-remote-resources-plugin
+					</artifactId>
+					<version>1.0-alpha-6</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>2.0.4</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.3</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-assembly-plugin</artifactId>
+					<version>2.2-beta-1</version>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		
 	</build>
 
 
