@@ -11,7 +11,7 @@
 	<description>The Awired Commons Java parent Project</description>
 	<version>1.0-SNAPSHOT</version>
 	<inceptionYear>2008</inceptionYear>
-	
+
 	<parent>
 		<groupId>net.awired</groupId>
 		<artifactId>awired</artifactId>
@@ -36,6 +36,10 @@
 			<id>java.net</id>
 			<url>http://download.java.net/maven/2/</url>
 		</repository>
+		<repository>
+			<id>awired.net</id>
+			<url>http://mvn.awired.net/content/repositories/snapshots/</url>
+		</repository>
 	</repositories>
 
 	<!-- REPOSITORIES -->
@@ -45,6 +49,7 @@
 			<url>http://snapshots.repository.codehaus.org/</url>
 		</pluginRepository>
 	</pluginRepositories>
+
 
 	<build>
 		<!-- final name -->
@@ -222,58 +227,196 @@
 	</build>
 
 
+
+
+
 <!-- ############################################################ -->
-  <reporting>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-javadoc-plugin</artifactId>
-        <version>2.2</version>
-        <configuration> 
-          <aggregate>true</aggregate>
-        </configuration> 
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jxr-plugin</artifactId>
-        <version>2.1</version>
-        <configuration> 
-          <aggregate>true</aggregate>
-        </configuration> 
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-site-plugin</artifactId>
-        <configuration>
-          <!-- Exclude the navigation file for Maven 1 sites
-               and the changes file used by the changes-plugin,
-               as they interfere with the site generation. -->
-          <moduleExcludes>
-            <xdoc>navigation.xml,changes.xml</xdoc>
-          </moduleExcludes>
-        </configuration>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-report-plugin</artifactId>
-        <version>2.3</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>jdepend-maven-plugin</artifactId>
-        <version>2.0-beta-1</version>
-      </plugin>
-      <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>rat-maven-plugin</artifactId>
-        <version>1.0-alpha-3</version>
-      </plugin>
-    </plugins>
-  </reporting>
+<!--  <reporting>-->
+<!--    <plugins>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+<!--        <version>2.2</version>-->
+<!--        <configuration> -->
+<!--          <aggregate>true</aggregate>-->
+<!--        </configuration> -->
+<!--      </plugin>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-jxr-plugin</artifactId>-->
+<!--        <version>2.1</version>-->
+<!--        <configuration> -->
+<!--          <aggregate>true</aggregate>-->
+<!--        </configuration> -->
+<!--      </plugin>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-site-plugin</artifactId>-->
+<!--        <configuration>-->
+<!--           Exclude the navigation file for Maven 1 sites-->
+<!--               and the changes file used by the changes-plugin,-->
+<!--               as they interfere with the site generation. -->
+<!--          <moduleExcludes>-->
+<!--            <xdoc>navigation.xml,changes.xml</xdoc>-->
+<!--          </moduleExcludes>-->
+<!--        </configuration>-->
+<!--      </plugin>-->
+<!--      <plugin>-->
+<!--        <groupId>org.apache.maven.plugins</groupId>-->
+<!--        <artifactId>maven-surefire-report-plugin</artifactId>-->
+<!--        <version>2.3</version>-->
+<!--      </plugin>-->
+<!--      <plugin>-->
+<!--        <groupId>org.codehaus.mojo</groupId>-->
+<!--        <artifactId>jdepend-maven-plugin</artifactId>-->
+<!--        <version>2.0-beta-1</version>-->
+<!--      </plugin>-->
+
+<!--    </plugins>-->
+<!--  </reporting>-->
+
+
+
+
+
+
+	<!-- REPORTING -->
+	<reporting>
+		<plugins>
+			<!-- plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-project-info-reports-plugin</artifactId>
+				<version>2.0.1</version >
+			</plugin-->
+			<plugin>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.4</version>
+			</plugin>
+ 
+			<plugin>
+				<artifactId>maven-jxr-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-dependency-plugin</artifactId>
+				<version>2.0</version>
+			</plugin>
+			
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rat-maven-plugin</artifactId>
+				<version>1.0-alpha-3</version>
+			</plugin>			
+ 
+			<!-- plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>jdepend-maven-plugin</artifactId>
+				<version>2.0-SNAPSHOT</version>
+			</plugin -->
+ 
+<!--			<plugin>-->
+<!--				<artifactId>-->
+<!--					maven-project-info-reports-plugin-->
+<!--				</artifactId>-->
+<!--				<version>2.1-maestro-1.5</version>-->
+<!--				<reportSets>-->
+<!--					<reportSet>-->
+<!--						<reports>-->
+<!--							<report>index</report>-->
+<!--							<report>summary</report>-->
+<!--							<report>cim</report>-->
+<!--							<report>scm</report>-->
+<!--							<report>dependencies</report>-->
+														<report>dependency-convergence</report>
+<!--							<report>project-team</report>-->
+<!--						</reports>-->
+<!--					</reportSet>-->
+<!--				</reportSets>-->
+<!--			</plugin>-->
+ 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<version>2.1</version>
+			</plugin>
+ 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-pmd-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<sourceEncoding>utf-8</sourceEncoding>
+					<targetJdk>1.5</targetJdk>
+				</configuration>
+			</plugin>
+ 
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>cobertura-maven-plugin</artifactId>
+				<version>2.2</version>
+			</plugin>
+ 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-report-plugin</artifactId>
+				<version>2.4.3</version>
+			</plugin>
+			<!--			<plugin>-->
+			<!--				<groupId>org.apache.maven.plugins</groupId>-->
+			<!--				<artifactId>maven-plugin-plugin</artifactId>-->
+			<!--				<version>2.4.1</version>-->
+			<!--			</plugin>-->
+			<!--			<plugin>-->
+			<!--				<groupId>org.codehaus.mojo</groupId>-->
+			<!--				<artifactId>findbugs-maven-plugin</artifactId>-->
+			<!--				<version>1.1.1</version>-->
+			<!--				<configuration>-->
+			<!--					<xmlOutput>true</xmlOutput>-->
+			<!--					<effort>Max</effort>-->
+			<!--				</configuration>-->
+			<!--			</plugin>-->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>dashboard-maven-plugin</artifactId>
+				<version>1.0.0-beta-1</version>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>taglist-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<tags>
+						<tag>TODO</tag>
+						<tag>@TODO</tag>
+						<tag>FIXME</tag>
+						<tag>@FIXME</tag>
+					</tags>
+				</configuration>
+			</plugin>
+		</plugins>
+	</reporting>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <!-- ##################################################################################### -->
   <profiles>
+  	<!-- ci -->
     <profile>
       <id>ci</id>
       <distributionManagement>
@@ -290,6 +433,7 @@
       </distributionManagement>
     </profile>
 
+	<!-- release -->
     <profile>
       <id>release</id>
       <distributionManagement>
@@ -363,6 +507,7 @@
       </build>
     </profile>
 
+	<!-- rc? -->
     <profile>
       <id>rc</id>
       <distributionManagement>
