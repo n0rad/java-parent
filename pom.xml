@@ -18,7 +18,6 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 
-
 	<!-- default properties -->
 	<properties>
 		<maven.compile.source>1.6</maven.compile.source>
@@ -148,12 +147,18 @@
 				<configuration>
 					<warSourceDirectory>${basedir}/webapp</warSourceDirectory>
 					<archive>
-						<manifest>
+						<!-- >manifest>
 							<addClasspath>true</addClasspath>
-						</manifest>					
-						<manifestEntries> 
-							<Main-Class>net.awired.acse.bootstrap</Main-Class>
-							<Copyright>${project.url}</Copyright>
+						</manifest -->
+						<manifestEntries>
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-Website>${project.url}</Project-Website>
+							<Source-JDK>${maven.compile.source}</Source-JDK>
+							<Target-JDK>${maven.compile.target}</Target-JDK>
+							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -165,20 +170,19 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Specification-Title>${project.name}</Specification-Title>
-							<Specification-Version>${project.version}</Specification-Version>
-							<Specification-Vendor>${project.organization.name}</Specification-Vendor>
-							<Implementation-Title>${project.name}</Implementation-Title>
-							<Implementation-Version>${project.version}</Implementation-Version>
-							<Implementation-Vendor>${project.organization.name}</Implementation-Vendor>
-							<Implementation-Vendor-Id>${project.groupId}</Implementation-Vendor-Id>
-							<X-Compile-Source-JDK>${maven.compile.source}</X-Compile-Source-JDK>
-							<X-Compile-Target-JDK>${maven.compile.source}</X-Compile-Target-JDK>
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-Website>${project.url}</Project-Website>
+							<Source-JDK>${maven.compile.source}</Source-JDK>
+							<Target-JDK>${maven.compile.target}</Target-JDK>
+							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
 				</configuration>
 			</plugin>
-			
+
 			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
@@ -186,7 +190,6 @@
 					<argLine>-Xmx500M</argLine>
 				</configuration>
 			</plugin -->
-
 
 			<plugin>
 				<artifactId>maven-idea-plugin</artifactId>
