@@ -62,57 +62,7 @@
 	</dependencyManagement>
 
 	<build>
-
 		<plugins>		
-			<!-- eclipse -->			
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.5.1</version>
-				<configuration>
-					<!-- add checkstyle to project nature -->
-					<additionalProjectnatures>
-						<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
-					</additionalProjectnatures>
-					<!-- add checkstyle to build -->
-					<buildcommands>
-						<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
-						<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
-					</buildcommands>
-					
-					<!-- >workspace>${basedir}/..</workspace-->
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>1.5</wtpversion>
-					<additionalConfig>
-						<!-- set formatter -->
-						<file>
-							<name>/.settings/org.eclipse.jdt.core.prefs</name>
-							<location>/dev/common/eclipse/org.eclipse.jdt.core.prefs</location>
-						</file>
-						<!-- set cleanup -->
-						<file>
-							<name>/.settings/org.eclipse.jdt.ui.prefs</name>
-							<location>/dev/common/eclipse/org.eclipse.jdt.ui.prefs</location>
-						</file>
-						<!-- Using utf8 -->
-						<file>
-							<name>/.settings/org.eclipse.core.resources.prefs</name>
-							<location>/dev/common/eclipse/org.eclipse.core.resources.prefs</location>
-						</file>
-						<!--  Using \n as endl -->
-						<file>
-							<name>/.settings/org.eclipse.core.runtime.prefs</name>
-							<location>/dev/common/eclipse/org.eclipse.core.runtime.prefs</location>
-						</file>
-						<!-- Using checkstyle configuration file -->
-						<file>
-							<name>.checkstyle</name>
-							<location>/dev/common/eclipse/.checkstyle</location>
-						</file>						
-					</additionalConfig>
-				</configuration>
-			</plugin>
 			
 			<!-- checkstyle -->
 			<plugin>
@@ -169,6 +119,16 @@
 				<artifactId>maven-jar-plugin</artifactId>
 				<configuration>
 					<archive>
+						<manifest>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+						<!-- >manifestEntries>
+							<Implementation-Vendor-Id>www.my.com</Implementation-Vendor-Id>
+							<Specification-Version>${pom.version}</Specification-Version>
+							<Implementation-Version>${buildNumber}</Implementation-Version>
+						</manifestEntries>
+						<manifestFile>${basedir}/src/main/resources/MANIFEST.MF</manifestFile -->					
 						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
@@ -202,6 +162,60 @@
 		<!-- plugin management -->
 		<pluginManagement>
 			<plugins>
+
+				<!-- eclipse -->			
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.5.1</version>
+					<configuration>
+						<!-- add checkstyle to project nature -->
+						<additionalProjectnatures>
+							<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
+						</additionalProjectnatures>
+						<!-- add checkstyle to build -->
+						<buildcommands>
+							<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
+							<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+						</buildcommands>
+						
+						<!-- >workspace>${basedir}/..</workspace-->
+						<downloadSources>true</downloadSources>
+						<downloadJavadocs>true</downloadJavadocs>
+						<wtpversion>1.5</wtpversion>
+						<additionalConfig>
+							<!-- set formatter -->
+							<file>
+								<name>/.settings/org.eclipse.jdt.core.prefs</name>
+								<location>/dev/common/eclipse/org.eclipse.jdt.core.prefs</location>
+							</file>
+							<!-- set cleanup -->
+							<file>
+								<name>/.settings/org.eclipse.jdt.ui.prefs</name>
+								<location>/dev/common/eclipse/org.eclipse.jdt.ui.prefs</location>
+							</file>
+							<!-- Using utf8 -->
+							<file>
+								<name>/.settings/org.eclipse.core.resources.prefs</name>
+								<location>/dev/common/eclipse/org.eclipse.core.resources.prefs</location>
+							</file>
+							<!--  Using \n as endl -->
+							<file>
+								<name>/.settings/org.eclipse.core.runtime.prefs</name>
+								<location>/dev/common/eclipse/org.eclipse.core.runtime.prefs</location>
+							</file>
+							<!-- Using checkstyle configuration file -->
+							<file>
+								<name>.checkstyle</name>
+								<location>/dev/common/eclipse/.checkstyle</location>
+							</file>						
+						</additionalConfig>
+					</configuration>
+				</plugin>
+
+
+
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
