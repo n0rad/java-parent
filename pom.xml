@@ -175,8 +175,8 @@
 						</additionalProjectnatures>
 						<!-- add checkstyle to build -->
 						<buildcommands>
-							<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
 							<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+							<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
 						</buildcommands>
 						
 						<!-- >workspace>${basedir}/..</workspace-->
