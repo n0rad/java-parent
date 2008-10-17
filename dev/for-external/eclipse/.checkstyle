@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fileset-config file-format-version="1.2.0" simple-config="true">
-    <local-check-config name="awd_checkstyle" location="dev/common/checkstyle/awd_checkstyle.xml" type="project" description="the awired checkstyle configuration">
+    <local-check-config name="awd_checkstyle" location="dev/external/acjp/checkstyle/awd_checkstyle.xml" type="project" description="the awired checkstyle configuration">
         <additional-data name="protect-config-file" value="true"/>
     </local-check-config>
     <fileset name="tous" enabled="true" check-config-name="awd_checkstyle" local="true">
