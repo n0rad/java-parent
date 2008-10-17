@@ -142,6 +142,28 @@
 					</archive>
 				</configuration>
 			</plugin>
+			
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>                
+                    <archive>
+						<manifest>
+							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+						</manifest>
+                        <manifestEntries>
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-Website>${project.url}</Project-Website>
+							<Source-JDK>${maven.compile.source}</Source-JDK>
+							<Target-JDK>${maven.compile.target}</Target-JDK>
+							<Copyright>${project.organization.name}</Copyright>
+                        </manifestEntries>
+                    </archive>
+				</configuration>
+			</plugin>
 
 			<!-- plugin>
 				<groupId>org.apache.maven.plugins</groupId>
