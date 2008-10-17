@@ -95,7 +95,6 @@
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
-					<warSourceDirectory>${basedir}/webapp</warSourceDirectory>
 					<archive>
 						<!-- >manifest>
 							<addClasspath>true</addClasspath>
