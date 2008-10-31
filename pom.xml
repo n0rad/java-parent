@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
@@ -20,13 +19,13 @@
 
 	<!-- default properties -->
 	<properties>
-		<acjp.dev.directory>dev</acjp.dev.directory>
-	
+		<dev.directory>dev</dev.directory>
+
 		<maven.compile.source>1.6</maven.compile.source>
 		<maven.compile.target>1.6</maven.compile.target>
-		 <!--
-		Make the deployment protocol pluggable. This allows to switch to
-		other protocols like scpexe, which some users prefer over scp.
+		<!--
+			Make the deployment protocol pluggable. This allows to switch to
+			other protocols like scpexe, which some users prefer over scp.
 		-->
 		<commons.deployment.protocol>scp</commons.deployment.protocol>
 	</properties>
@@ -40,31 +39,31 @@
 				<version>3.8.1</version>
 				<scope>test</scope>
 			</dependency>
-		</dependencies>	
+		</dependencies>
 	</dependencyManagement>
 
 	<build>
-		<plugins>		
-			
+		<plugins>
+
 			<!-- checkstyle -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<configuration>
-		             <failOnViolation>true</failOnViolation>
-		             <enableRulesSummary>true</enableRulesSummary>
-		             <configLocation>${acjp.dev.directory}/external/acjp/checkstyle/awd_checkstyle.xml</configLocation>
+					<failOnViolation>true</failOnViolation>
+					<enableRulesSummary>true</enableRulesSummary>
+					<configLocation>${dev.directory}/external/acjp/checkstyle/awd_checkstyle.xml</configLocation>
 				</configuration>
 				<dependencies>
-					<!-- dependency>
-						<groupId>com.example.whizbang</groupId>
-						<artifactId>build-tools</artifactId>
-						<version>1.0</version>
-						</dependency -->
+					<!--
+						dependency> <groupId>com.example.whizbang</groupId>
+						<artifactId>build-tools</artifactId> <version>1.0</version>
+						</dependency
+					-->
 				</dependencies>
-			</plugin>			
+			</plugin>
 
-			<!-- compiler -->		
+			<!-- compiler -->
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
@@ -78,14 +77,14 @@
 				<artifactId>maven-war-plugin</artifactId>
 				<configuration>
 					<archive>
-						<!-- >manifest>
-							<addClasspath>true</addClasspath>
-						</manifest -->
+						<!--
+							>manifest> <addClasspath>true</addClasspath> </manifest
+						-->
 						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
 							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
 							<Source-JDK>${maven.compile.source}</Source-JDK>
 							<Target-JDK>${maven.compile.target}</Target-JDK>
@@ -104,17 +103,19 @@
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
-						<!-- >manifestEntries>
+						<!--
+							>manifestEntries>
 							<Implementation-Vendor-Id>www.my.com</Implementation-Vendor-Id>
 							<Specification-Version>${pom.version}</Specification-Version>
 							<Implementation-Version>${buildNumber}</Implementation-Version>
-						</manifestEntries>
-						<manifestFile>${basedir}/src/main/resources/MANIFEST.MF</manifestFile -->					
+							</manifestEntries>
+							<manifestFile>${basedir}/src/main/resources/MANIFEST.MF</manifestFile
+						-->
 						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
 							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
 							<Source-JDK>${maven.compile.source}</Source-JDK>
 							<Target-JDK>${maven.compile.target}</Target-JDK>
@@ -123,36 +124,34 @@
 					</archive>
 				</configuration>
 			</plugin>
-			
-            <plugin>
-                <artifactId>maven-assembly-plugin</artifactId>
-                <configuration>                
-                    <archive>
+
+			<plugin>
+				<artifactId>maven-assembly-plugin</artifactId>
+				<configuration>
+					<archive>
 						<manifest>
 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
 						</manifest>
-                        <manifestEntries>
+						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
 							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>						
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
 							<Source-JDK>${maven.compile.source}</Source-JDK>
 							<Target-JDK>${maven.compile.target}</Target-JDK>
 							<Copyright>${project.organization.name}</Copyright>
-                        </manifestEntries>
-                    </archive>
+						</manifestEntries>
+					</archive>
 				</configuration>
 			</plugin>
 
-			<!-- plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<configuration>
-					<argLine>-Xmx500M</argLine>
-				</configuration>
-			</plugin -->
+			<!--
+				plugin> <groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId> <configuration>
+				<argLine>-Xmx500M</argLine> </configuration> </plugin
+			-->
 
 			<plugin>
 				<artifactId>maven-idea-plugin</artifactId>
@@ -161,12 +160,12 @@
 				</configuration>
 			</plugin>
 		</plugins>
-		
+
 		<!-- plugin management -->
 		<pluginManagement>
 			<plugins>
 
-				<!-- eclipse -->			
+				<!-- eclipse -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-eclipse-plugin</artifactId>
@@ -177,11 +176,10 @@
 							<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
 						</additionalProjectnatures>
 						<!-- add checkstyle to build -->
-						<buildcommands>
-							<buildcommand>org.eclipse.jdt.core.javabuilder</buildcommand>
+						<additionalBuildcommands>
 							<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
-						</buildcommands>
-						
+						</additionalBuildcommands>
+
 						<!-- >workspace>${basedir}/..</workspace-->
 						<downloadSources>true</downloadSources>
 						<downloadJavadocs>true</downloadJavadocs>
@@ -190,28 +188,28 @@
 							<!-- set formatter -->
 							<file>
 								<name>/.settings/org.eclipse.jdt.core.prefs</name>
-								<location>${acjp.dev.directory}/external/acjp/eclipse/org.eclipse.jdt.core.prefs</location>
+								<location>${dev.directory}/external/acjp/eclipse/org.eclipse.jdt.core.prefs</location>
 							</file>
 							<!-- set cleanup -->
 							<file>
 								<name>/.settings/org.eclipse.jdt.ui.prefs</name>
-								<location>${acjp.dev.directory}/external/acjp/eclipse/org.eclipse.jdt.ui.prefs</location>
+								<location>${dev.directory}/external/acjp/eclipse/org.eclipse.jdt.ui.prefs</location>
 							</file>
 							<!-- Using utf8 -->
 							<file>
 								<name>/.settings/org.eclipse.core.resources.prefs</name>
-								<location>${acjp.dev.directory}/external/acjp/eclipse/org.eclipse.core.resources.prefs</location>
+								<location>${dev.directory}/external/acjp/eclipse/org.eclipse.core.resources.prefs</location>
 							</file>
 							<!--  Using \n as endl -->
 							<file>
 								<name>/.settings/org.eclipse.core.runtime.prefs</name>
-								<location>${acjp.dev.directory}/external/acjp/eclipse/org.eclipse.core.runtime.prefs</location>
+								<location>${dev.directory}/external/acjp/eclipse/org.eclipse.core.runtime.prefs</location>
 							</file>
 							<!-- Using checkstyle configuration file -->
 							<file>
 								<name>.checkstyle</name>
-								<location>${acjp.dev.directory}/external/acjp/eclipse/.checkstyle</location>
-							</file>						
+								<location>${dev.directory}/external/acjp/eclipse/.checkstyle</location>
+							</file>
 						</additionalConfig>
 					</configuration>
 				</plugin>
@@ -241,11 +239,11 @@
 					<artifactId>maven-source-plugin</artifactId>
 					<version>2.0.4</version>
 				</plugin>
-				<!-- >plugin>
-					<groupId>org.apache.maven.plugins</groupId>
+				<!--
+					>plugin> <groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.3</version>
-				</plugin -->
+					<version>2.3</version> </plugin
+				-->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
@@ -253,57 +251,57 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-		
+
 	</build>
 
 
 
 
 
-<!-- ############################################################ -->
-<!--  <reporting>-->
-<!--    <plugins>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
-<!--        <version>2.2</version>-->
-<!--        <configuration> -->
-<!--          <aggregate>true</aggregate>-->
-<!--        </configuration> -->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-jxr-plugin</artifactId>-->
-<!--        <version>2.1</version>-->
-<!--        <configuration> -->
-<!--          <aggregate>true</aggregate>-->
-<!--        </configuration> -->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-site-plugin</artifactId>-->
-<!--        <configuration>-->
-<!--           Exclude the navigation file for Maven 1 sites-->
-<!--               and the changes file used by the changes-plugin,-->
-<!--               as they interfere with the site generation. -->
-<!--          <moduleExcludes>-->
-<!--            <xdoc>navigation.xml,changes.xml</xdoc>-->
-<!--          </moduleExcludes>-->
-<!--        </configuration>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>org.apache.maven.plugins</groupId>-->
-<!--        <artifactId>maven-surefire-report-plugin</artifactId>-->
-<!--        <version>2.3</version>-->
-<!--      </plugin>-->
-<!--      <plugin>-->
-<!--        <groupId>org.codehaus.mojo</groupId>-->
-<!--        <artifactId>jdepend-maven-plugin</artifactId>-->
-<!--        <version>2.0-beta-1</version>-->
-<!--      </plugin>-->
+	<!-- ############################################################ -->
+	<!--  <reporting>-->
+	<!--    <plugins>-->
+	<!--      <plugin>-->
+	<!--        <groupId>org.apache.maven.plugins</groupId>-->
+	<!--        <artifactId>maven-javadoc-plugin</artifactId>-->
+	<!--        <version>2.2</version>-->
+	<!--        <configuration> -->
+	<!--          <aggregate>true</aggregate>-->
+	<!--        </configuration> -->
+	<!--      </plugin>-->
+	<!--      <plugin>-->
+	<!--        <groupId>org.apache.maven.plugins</groupId>-->
+	<!--        <artifactId>maven-jxr-plugin</artifactId>-->
+	<!--        <version>2.1</version>-->
+	<!--        <configuration> -->
+	<!--          <aggregate>true</aggregate>-->
+	<!--        </configuration> -->
+	<!--      </plugin>-->
+	<!--      <plugin>-->
+	<!--        <groupId>org.apache.maven.plugins</groupId>-->
+	<!--        <artifactId>maven-site-plugin</artifactId>-->
+	<!--        <configuration>-->
+	<!--           Exclude the navigation file for Maven 1 sites-->
+	<!--               and the changes file used by the changes-plugin,-->
+	<!--               as they interfere with the site generation. -->
+	<!--          <moduleExcludes>-->
+	<!--            <xdoc>navigation.xml,changes.xml</xdoc>-->
+	<!--          </moduleExcludes>-->
+	<!--        </configuration>-->
+	<!--      </plugin>-->
+	<!--      <plugin>-->
+	<!--        <groupId>org.apache.maven.plugins</groupId>-->
+	<!--        <artifactId>maven-surefire-report-plugin</artifactId>-->
+	<!--        <version>2.3</version>-->
+	<!--      </plugin>-->
+	<!--      <plugin>-->
+	<!--        <groupId>org.codehaus.mojo</groupId>-->
+	<!--        <artifactId>jdepend-maven-plugin</artifactId>-->
+	<!--        <version>2.0-beta-1</version>-->
+	<!--      </plugin>-->
 
-<!--    </plugins>-->
-<!--  </reporting>-->
+	<!--    </plugins>-->
+	<!--  </reporting>-->
 
 
 
@@ -313,16 +311,16 @@
 	<!-- REPORTING -->
 	<reporting>
 		<plugins>
-			<!-- plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+			<!--
+				plugin> <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.0.1</version >
-			</plugin-->
+				<version>2.0.1</version > </plugin
+			-->
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.4</version>
 			</plugin>
- 
+
 			<plugin>
 				<artifactId>maven-jxr-plugin</artifactId>
 				<version>2.0</version>
@@ -332,45 +330,45 @@
 				<artifactId>maven-dependency-plugin</artifactId>
 				<version>2.0</version>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>rat-maven-plugin</artifactId>
 				<version>1.0-alpha-3</version>
-			</plugin>			
- 
-			<!-- plugin>
-				<groupId>org.codehaus.mojo</groupId>
+			</plugin>
+
+			<!--
+				plugin> <groupId>org.codehaus.mojo</groupId>
 				<artifactId>jdepend-maven-plugin</artifactId>
-				<version>2.0-SNAPSHOT</version>
-			</plugin -->
- 
-<!--			<plugin>-->
-<!--				<artifactId>-->
-<!--					maven-project-info-reports-plugin-->
-<!--				</artifactId>-->
-<!--				<version>2.1-maestro-1.5</version>-->
-<!--				<reportSets>-->
-<!--					<reportSet>-->
-<!--						<reports>-->
-<!--							<report>index</report>-->
-<!--							<report>summary</report>-->
-<!--							<report>cim</report>-->
-<!--							<report>scm</report>-->
-<!--							<report>dependencies</report>-->
-														<report>dependency-convergence</report>
-<!--							<report>project-team</report>-->
-<!--						</reports>-->
-<!--					</reportSet>-->
-<!--				</reportSets>-->
-<!--			</plugin>-->
- 
+				<version>2.0-SNAPSHOT</version> </plugin
+			-->
+
+			<!--			<plugin>-->
+			<!--				<artifactId>-->
+			<!--					maven-project-info-reports-plugin-->
+			<!--				</artifactId>-->
+			<!--				<version>2.1-maestro-1.5</version>-->
+			<!--				<reportSets>-->
+			<!--					<reportSet>-->
+			<!--						<reports>-->
+			<!--							<report>index</report>-->
+			<!--							<report>summary</report>-->
+			<!--							<report>cim</report>-->
+			<!--							<report>scm</report>-->
+			<!--							<report>dependencies</report>-->
+			<report>dependency-convergence</report>
+			<!--							<report>project-team</report>-->
+			<!--						</reports>-->
+			<!--					</reportSet>-->
+			<!--				</reportSets>-->
+			<!--			</plugin>-->
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
 				<version>2.1</version>
 			</plugin>
- 
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
@@ -380,18 +378,18 @@
 					<targetJdk>1.5</targetJdk>
 				</configuration>
 			</plugin>
- 
+
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>cobertura-maven-plugin</artifactId>
 				<version>2.2</version>
 			</plugin>
- 
-			<!-- >plugin>
-				<groupId>org.apache.maven.plugins</groupId>
+
+			<!--
+				>plugin> <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.4.3</version>
-			</plugin -->
+				<version>2.4.3</version> </plugin
+			-->
 			<!--			<plugin>-->
 			<!--				<groupId>org.apache.maven.plugins</groupId>-->
 			<!--				<artifactId>maven-plugin-plugin</artifactId>-->
@@ -444,178 +442,184 @@
 
 
 
-<!-- ##################################################################################### -->
-  <profiles>
-  	<!-- ci -->
-    <profile>
-      <id>ci</id>
-      <distributionManagement>
-        <repository>
-          <id>apache.snapshots</id>
-          <name>Apache Development Snapshot Repository</name>
-          <url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
-        </repository>
-        <snapshotRepository>
-          <id>apache.snapshots</id>
-          <name>Apache Development Snapshot Repository</name>
-          <url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
-        </snapshotRepository>
-      </distributionManagement>
-    </profile>
+	<!--
+		#####################################################################################
+	-->
+	<profiles>
+		<!-- ci -->
+		<profile>
+			<id>ci</id>
+			<distributionManagement>
+				<repository>
+					<id>apache.snapshots</id>
+					<name>Apache Development Snapshot Repository</name>
+					<url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+				</repository>
+				<snapshotRepository>
+					<id>apache.snapshots</id>
+					<name>Apache Development Snapshot Repository</name>
+					<url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+				</snapshotRepository>
+			</distributionManagement>
+		</profile>
 
-	<!-- release -->
-    <profile>
-      <id>release</id>
-      <distributionManagement>
-        <repository>
-          <id>apache.releases</id>
-          <name>Apache Release Distribution Repository</name>
-          <url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</url>
-        </repository>
-      </distributionManagement>
-      <build>
-        <plugins>
-          <!-- We want to sign the artifact, the POM, and all attached artifacts -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <passphrase>${gpg.passphrase}</passphrase>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>create-source-jar</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>create-javadoc-jar</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-                <configuration>
-                  <source>${maven.compile.source}</source>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <!-- We want to package license resources into the JARs -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-remote-resources-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>process</goal>
-                </goals>
-                <configuration>
-                  <resourceBundles>
-                    <resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
-                  </resourceBundles>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+		<!-- release -->
+		<profile>
+			<id>release</id>
+			<distributionManagement>
+				<repository>
+					<id>apache.releases</id>
+					<name>Apache Release Distribution Repository</name>
+					<url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-ibiblio-rsync-repository</url>
+				</repository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<!--
+						We want to sign the artifact, the POM, and all attached artifacts
+					-->
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<configuration>
+							<passphrase>${gpg.passphrase}</passphrase>
+						</configuration>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>create-source-jar</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>create-javadoc-jar</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<source>${maven.compile.source}</source>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- We want to package license resources into the JARs -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-remote-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>process</goal>
+								</goals>
+								<configuration>
+									<resourceBundles>
+										<resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
+									</resourceBundles>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 
-	<!-- rc? -->
-    <profile>
-      <id>rc</id>
-      <distributionManagement>
-        <repository>
-          <id>apache.snapshots</id>
-          <name>Apache Development Snapshot Repository</name>
-          <url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
-        </repository>
-        <snapshotRepository>
-          <id>apache.snapshots</id>
-          <name>Apache Development Snapshot Repository</name>
-          <url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
-        </snapshotRepository>
-      </distributionManagement>
-      <build>
-        <plugins>
-          <!-- We want to sign the artifact, the POM, and all attached artifacts -->
-          <plugin>
-            <artifactId>maven-gpg-plugin</artifactId>
-            <configuration>
-              <passphrase>${gpg.passphrase}</passphrase>
-            </configuration>
-            <executions>
-              <execution>
-                <id>sign-artifacts</id>
-                <phase>verify</phase>
-                <goals>
-                  <goal>sign</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-source-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>create-source-jar</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-              </execution>
-            </executions>
-          </plugin>
-          <plugin>
-            <artifactId>maven-javadoc-plugin</artifactId>
-            <executions>
-              <execution>
-                <id>create-javadoc-jar</id>
-                <goals>
-                  <goal>jar</goal>
-                </goals>
-                <configuration>
-                  <source>${maven.compile.source}</source>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-          <!-- We want to package license resources into the JARs -->
-          <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-remote-resources-plugin</artifactId>
-            <executions>
-              <execution>
-                <goals>
-                  <goal>process</goal>
-                </goals>
-                <configuration>
-                  <resourceBundles>
-                    <resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
-                  </resourceBundles>
-                </configuration>
-              </execution>
-            </executions>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
-  </profiles>
+		<!-- rc? -->
+		<profile>
+			<id>rc</id>
+			<distributionManagement>
+				<repository>
+					<id>apache.snapshots</id>
+					<name>Apache Development Snapshot Repository</name>
+					<url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+				</repository>
+				<snapshotRepository>
+					<id>apache.snapshots</id>
+					<name>Apache Development Snapshot Repository</name>
+					<url>${commons.deployment.protocol}://people.apache.org/www/people.apache.org/repo/m2-snapshot-repository</url>
+				</snapshotRepository>
+			</distributionManagement>
+			<build>
+				<plugins>
+					<!--
+						We want to sign the artifact, the POM, and all attached artifacts
+					-->
+					<plugin>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<configuration>
+							<passphrase>${gpg.passphrase}</passphrase>
+						</configuration>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-source-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>create-source-jar</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<executions>
+							<execution>
+								<id>create-javadoc-jar</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<source>${maven.compile.source}</source>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- We want to package license resources into the JARs -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-remote-resources-plugin</artifactId>
+						<executions>
+							<execution>
+								<goals>
+									<goal>process</goal>
+								</goals>
+								<configuration>
+									<resourceBundles>
+										<resourceBundle>org.apache:apache-jar-resource-bundle:1.3</resourceBundle>
+									</resourceBundles>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 
 </project>
