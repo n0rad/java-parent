@@ -2,23 +2,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.awired</groupId>
-	<artifactId>parent</artifactId>
+	<groupId>net.awired.parent.java</groupId>
+	<artifactId>spring-bundle</artifactId>
 	<packaging>pom</packaging>
 
-	<name>Awired Parent</name>
-	<description>The Awired Parent Project</description>
+	<name>Awired Spring Bundle Java Parent</name>
+	<description>The Awired Spring Bundle Java Parent Project</description>
 	<version>1.0-SNAPSHOT</version>
+	<inceptionYear>2008</inceptionYear>
 
 	<parent>
-		<groupId>net.awired</groupId>
-		<artifactId>awired</artifactId>
+		<groupId>net.awired.parent.java</groupId>
+		<artifactId>commons</artifactId>
 		<version>1.0-SNAPSHOT</version>
+		<relativePath>../../</relativePath>
 	</parent>
-
-	<modules>
-		<module>proj/java</module>
-		<module>proj/php</module>
-	</modules>
 
 </project>
