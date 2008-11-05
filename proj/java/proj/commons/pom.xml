@@ -183,7 +183,7 @@
 						<!-- >workspace>${basedir}/..</workspace-->
 						<downloadSources>true</downloadSources>
 						<downloadJavadocs>true</downloadJavadocs>
-						<wtpversion>1.5</wtpversion>
+						<wtpversion>2.0</wtpversion>
 					</configuration>
 				</plugin>
 

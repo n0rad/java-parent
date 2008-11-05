@@ -18,4 +18,67 @@
 		<relativePath>../../</relativePath>
 	</parent>
 
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.felix</groupId>
+				<artifactId>maven-bundle-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>1.0.0</version>
+				<!--
+					>configuration> <manifestLocation>META-INF</manifestLocation>
+					<instructions>
+					<Export-Package>!net.awired.agse.awse.user.web.impl,net.awired.agse.awse.user.web*</Export-Package>
+					<Import-Package>*</Import-Package> <!- add ,plugin.xml if it's
+					present i.e. src/main/resources,plugin.xml ->
+					<Include-Resource>src/main/resources</Include-Resource>
+					</instructions> </configuration
+				-->
+			</plugin>
+
+			<!-- eclipse plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<addGroupIdToProjectName>true</addGroupIdToProjectName>
+
+					<wtpdefaultserver>SpringSource dm Server v1.0 at localhost</wtpdefaultserver>
+					<wtpversion>2.0</wtpversion>
+
+
+
+					<additionalProjectnatures>
+
+						<nature>com.springsource.server.ide.facet.core.bundlenature</nature>
+						<nature>org.springframework.ide.eclipse.core.springnature</nature>
+
+						<!--
+							>projectnature>com.springsource.server.ide.facet.core.bundlenature</projectnature>
+							<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+							<projectnature>org.eclipse.wst.common.project.facet.core.projectnature</projectnature>
+							<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+							<projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
+							<projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature
+						-->
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<additionalProjectFacets>
+					
+<!-- <runtime name="SpringSource dm Server (Runtime) v1.0"/> -->					
+					
+						<com.springsource.server.bundle>1.0</com.springsource.server.bundle>
+					</additionalProjectFacets>
+
+					<classpathContainers>
+						<classpathContainer>com.springsource.server.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER</classpathContainer>
+					</classpathContainers>
+
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 </project>
