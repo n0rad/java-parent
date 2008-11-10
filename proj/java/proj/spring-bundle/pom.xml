@@ -35,11 +35,7 @@
 					</instructions> </configuration
 				-->
 			</plugin>
-		</plugins>
 
-
-		<pluginManagement>
-			<plugins>
 				<!-- eclipse plugin -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -102,6 +98,22 @@
 						</dependency> </dependencies
 					-->
 				</plugin>
+
+
+		</plugins>
+
+
+
+
+
+
+
+
+
+
+
+		<pluginManagement>
+			<plugins>
 			</plugins>
 		</pluginManagement>
 	</build>
