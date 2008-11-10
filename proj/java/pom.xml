@@ -161,12 +161,8 @@
 					<jdkLevel>${maven.compile.source}</jdkLevel>
 				</configuration>
 			</plugin>
-		</plugins>
-
-		<!-- plugin management -->
-		<pluginManagement>
-			<plugins>
-
+			
+			
 				<!-- eclipse -->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -193,8 +189,8 @@
 								<content>
 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <fileset-config file-format-version="1.2.0" simple-config="true">
-    <local-check-config name="awd_checkstyle" location="dev/external/acjp/checkstyle/awd_checkstyle.xml" type="project" description="the awired checkstyle configuration">
-        <additional-data name="protect-config-file" value="true"/>
+    <local-check-config name="awd_checkstyle" location="http://svn.awired.net/parent/trunk/proj/java/dev/for-external/checkstyle/awd_checkstyle.xml" type="remote" description="the awired checkstyle configuration">
+        <additional-data name="cache-file" value="false"/>
     </local-check-config>
     <fileset name="tous" enabled="true" check-config-name="awd_checkstyle" local="true">
         <file-match-pattern match-pattern="." include-pattern="true"/>
@@ -213,7 +209,7 @@ encoding/<project>=UTF-8
 								</content>
 							</file>
 							<file>
-								<name>org.eclipse.core.runtime.prefs</name>
+								<name>.settings/org.eclipse.core.runtime.prefs</name>
 								<content>
 <![CDATA[#Wed Apr 09 11:53:53 CEST 2008
 eclipse.preferences.version=1
@@ -608,7 +604,15 @@ sp_cleanup.use_this_for_non_static_method_access_only_if_necessary=true
 							</file>
 						</additionalConfig>
 					</configuration>
-				</plugin>
+				</plugin>			
+			
+		</plugins>
+
+		<!-- plugin management -->
+		<pluginManagement>
+			<plugins>
+
+
 
 
 
