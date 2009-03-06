@@ -12,8 +12,8 @@
 	<inceptionYear>2008</inceptionYear>
 
 	<parent>
-		<groupId>net.awired.parent</groupId>
-		<artifactId>java</artifactId>
+		<groupId>net.awired.parent.parent-java</groupId>
+		<artifactId>parent-java</artifactId>
 		<version>1.0-SNAPSHOT</version>
 		<relativePath>../../</relativePath>
 	</parent>
