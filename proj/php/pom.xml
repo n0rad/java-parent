@@ -2,8 +2,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.awired.parent</groupId>
-	<artifactId>php</artifactId>
+	<groupId>net.awired.parent.parent-php</groupId>
+	<artifactId>parent-php</artifactId>
 	<packaging>pom</packaging>
 
 	<name>Awired Php Parent</name>
