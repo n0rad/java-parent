@@ -17,8 +17,8 @@
 	</parent>
 
 	<modules>
-		<module>proj/java</module>
-		<module>proj/php</module>
+		<module>projs/java</module>
+		<module>projs/php</module>
 	</modules>
 
 </project>
