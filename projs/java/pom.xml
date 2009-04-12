@@ -16,7 +16,7 @@
 	</parent>
 
 	<modules>
-		<module>proj/spring-bundle</module>
+		<module>projs/spring-bundle</module>
 	</modules>
 
 	<!-- default properties -->

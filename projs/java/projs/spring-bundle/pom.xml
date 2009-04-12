@@ -18,13 +18,28 @@
 		<relativePath>../../</relativePath>
 	</parent>
 
+
+
 	<build>
+		<pluginManagement>
+			<plugins>
+			</plugins>
+		</pluginManagement>
 		<plugins>
+
 			<plugin>
 				<groupId>org.apache.felix</groupId>
 				<artifactId>maven-bundle-plugin</artifactId>
 				<extensions>true</extensions>
-				<version>1.0.0</version>
+				<configuration>
+					<instructions>
+						<Export-Package>org.foo.myproject.api</Export-Package>
+						<Private-Package>org.foo.myproject.*</Private-Package>
+						<Bundle-Activator>org.foo.myproject.impl1.Activator</Bundle-Activator>
+					</instructions>
+				</configuration>
+
+				<!--				<version>1.0.0</version>-->
 				<!--
 					>configuration> <manifestLocation>META-INF</manifestLocation>
 					<instructions>
@@ -36,86 +51,73 @@
 				-->
 			</plugin>
 
-				<!-- eclipse plugin -->
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-eclipse-plugin</artifactId>
-					<configuration>
-						<!-- wtpmanifest>true</wtpmanifest -->
-						<workspace>${eclipse.workspace.dir}</workspace>
-						<addGroupIdToProjectName>true</addGroupIdToProjectName>
-						<wtpdefaultserver><![CDATA[SpringSource dm Server v1.0 at localhost]]></wtpdefaultserver>
-						<wtpversion>2.0</wtpversion>
-						<!-- <![CDATA[SpringSource dm Server (Runtime) v1.0 at localhost]]> -->
-						<additionalProjectnatures>
-							<nature>com.springsource.server.ide.facet.core.bundlenature</nature>
-							<nature>org.springframework.ide.eclipse.core.springnature</nature>
-							<!--
-								>projectnature>com.springsource.server.ide.facet.core.bundlenature</projectnature>
-								<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
-								<projectnature>org.eclipse.wst.common.project.facet.core.projectnature</projectnature>
-								<projectnature>org.eclipse.jdt.core.javanature</projectnature>
-								<projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
-								<projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature
-							-->
-						</additionalProjectnatures>
-						<additionalBuildcommands>
-							<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
-						</additionalBuildcommands>
-						<!-- a runtime element is needed in facets -->
-						<additionalProjectFacets>
-							<!-- <runtime name="SpringSource dm Server (Runtime) v1.0"/> -->
-							<com.springsource.server.bundle>1.0</com.springsource.server.bundle>
-						</additionalProjectFacets>
-						<classpathContainers>
-							<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
-							<classpathContainer>com.springsource.server.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER</classpathContainer>
-						</classpathContainers>
-						<additionalConfig>
-							<file>
-								<name>.settings/org.eclipse.wst.common.project.facet.core.xml</name>
-								<content>
+			<!-- eclipse plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-eclipse-plugin</artifactId>
+				<configuration>
+					<!-- wtpmanifest>true</wtpmanifest -->
+					<workspace>${eclipse.workspace.dir}</workspace>
+					<addGroupIdToProjectName>true</addGroupIdToProjectName>
+					<wtpdefaultserver><![CDATA[SpringSource dm Server v1.0 at localhost]]></wtpdefaultserver>
+					<wtpversion>2.0</wtpversion>
+					<!-- <![CDATA[SpringSource dm Server (Runtime) v1.0 at localhost]]> -->
+					<additionalProjectnatures>
+						<nature>com.springsource.server.ide.facet.core.bundlenature</nature>
+						<nature>org.springframework.ide.eclipse.core.springnature</nature>
+						<!--
+							>projectnature>com.springsource.server.ide.facet.core.bundlenature</projectnature>
+							<projectnature>org.springframework.ide.eclipse.core.springnature</projectnature>
+							<projectnature>org.eclipse.wst.common.project.facet.core.projectnature</projectnature>
+							<projectnature>org.eclipse.jdt.core.javanature</projectnature>
+							<projectnature>org.eclipse.wst.common.modulecore.ModuleCoreNature</projectnature>
+							<projectnature>org.eclipse.jem.workbench.JavaEMFNature</projectnature
+						-->
+					</additionalProjectnatures>
+					<additionalBuildcommands>
+						<buildcommand>org.springframework.ide.eclipse.core.springbuilder</buildcommand>
+					</additionalBuildcommands>
+					<!-- a runtime element is needed in facets -->
+					<additionalProjectFacets>
+						<!-- <runtime name="SpringSource dm Server (Runtime) v1.0"/> -->
+						<com.springsource.server.bundle>1.0</com.springsource.server.bundle>
+					</additionalProjectFacets>
+					<classpathContainers>
+						<classpathContainer>org.eclipse.jdt.launching.JRE_CONTAINER</classpathContainer>
+						<classpathContainer>com.springsource.server.ide.jdt.core.MANIFEST_CLASSPATH_CONTAINER</classpathContainer>
+					</classpathContainers>
+					<additionalConfig>
+						<file>
+							<name>.settings/org.eclipse.wst.common.project.facet.core.xml</name>
+							<content>
 <![CDATA[<?xml version="1.0" encoding="UTF-8"?>
 <faceted-project>
   <runtime name="SpringSource dm Server (Runtime) v1.0"/>
   <installed facet="com.springsource.server.bundle" version="1.0"/>
 </faceted-project>]]>
-								</content>
-							</file>
-						</additionalConfig>
-						<!--
-							>additionalConfig> <file>
-							<name>.settings/org.eclipse.wst.common.project.facet.core.xml</name>
-							<location>/org.eclipse.wst.common.project.facet.core.xml</location>
-							</file> </additionalConfig
-						-->
-					</configuration>
+							</content>
+						</file>
+					</additionalConfig>
 					<!--
-						dependencies> <!- The file defined in the location is stored in
-						this dependency -> <dependency>
-						<groupId>net.awired.parent.java.spring-bundle</groupId>
-						<artifactId>dm-server-facet</artifactId> <version>1.0</version>
-						</dependency> </dependencies
+						>additionalConfig> <file>
+						<name>.settings/org.eclipse.wst.common.project.facet.core.xml</name>
+						<location>/org.eclipse.wst.common.project.facet.core.xml</location>
+						</file> </additionalConfig
 					-->
-				</plugin>
+				</configuration>
+				<!--
+					dependencies> <!- The file defined in the location is stored in
+					this dependency -> <dependency>
+					<groupId>net.awired.parent.java.spring-bundle</groupId>
+					<artifactId>dm-server-facet</artifactId> <version>1.0</version>
+					</dependency> </dependencies
+				-->
+			</plugin>
 
 
 		</plugins>
 
 
-
-
-
-
-
-
-
-
-
-		<pluginManagement>
-			<plugins>
-			</plugins>
-		</pluginManagement>
 	</build>
 
 </project>
