@@ -756,7 +756,7 @@ sp_cleanup.use_this_for_non_static_method_access_only_if_necessary=true
 			<!--							<report>cim</report>-->
 			<!--							<report>scm</report>-->
 			<!--							<report>dependencies</report>-->
-			<report>dependency-convergence</report>
+			<!--<report>dependency-convergence</report>-->
 			<!--							<report>project-team</report>-->
 			<!--						</reports>-->
 			<!--					</reportSet>-->
