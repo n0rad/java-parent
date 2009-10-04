@@ -6,9 +6,8 @@
 	<artifactId>parent-php</artifactId>
 	<packaging>pom</packaging>
 
-	<name>Awired Php Parent</name>
+	<name>Awired Parent - Php</name>
 	<description>The Awired Php Parent Project</description>
-	<version>1.0-SNAPSHOT</version>
 
 	<parent>
 		<groupId>net.awired.parent</groupId>
