@@ -1,0 +1,15 @@
+<project>
+<!--  <skin>
+    <groupId>net.awired.skin.agtpl</groupId>
+    <artifactId>agtpl</artifactId>
+    <version>0.1-SNAPSHOT</version>
+  </skin> -->
+
+<body>
+<menu ref="parent" inherit="top" />
+<menu ref="reports" inherit="top" />
+<menu ref="modules" inherit="top" />
+<menu name="My menu" inherit="top">
+</menu>
+</body>
+</project>

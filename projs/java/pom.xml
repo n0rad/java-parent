@@ -45,7 +45,18 @@
 
 
 
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.6</source>
+					<target>1.6</target>
 
+<!--					<fork>true</fork>-->
+<!--					<meminitial>256m</meminitial>-->
+<!--					<maxmem>1024m</maxmem>-->
+				</configuration>
+			</plugin>
 
 
 

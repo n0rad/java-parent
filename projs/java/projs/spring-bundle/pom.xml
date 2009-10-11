@@ -3,10 +3,10 @@
                       http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent.parent-java.spring-bundle</groupId>
-	<artifactId>spring-bundle</artifactId>
+	<artifactId>parent-spring-bundle</artifactId>
 	<packaging>pom</packaging>
 
-	<name>Awired Spring Bundle Java Parent</name>
+	<name>Awired Parent - Java - Spring Bundle</name>
 	<description>The Awired Spring Bundle Java Parent Project</description>
 	<version>1.0-SNAPSHOT</version>
 	<inceptionYear>2008</inceptionYear>
