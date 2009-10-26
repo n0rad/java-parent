@@ -32,7 +32,7 @@
 		<configuration>
 			<failOnViolation>true</failOnViolation>
 			<enableRulesSummary>true</enableRulesSummary>
-			<configLocation>AWDCheckstyle.xml</configLocation>
+			<configLocation>AWDCheckstyleRules.xml</configLocation>
 		</configuration>
 		<dependencies>
 			<dependency>
@@ -175,11 +175,11 @@
 							<!-- checkstyle -->
 							<file>
 								<name>.checkstyle</name>
-								<location>/eclipseCheckstyle.xml</location>
+								<location>/checkstyle.conf</location>
 							</file>
 							<file>
-								<name>.settings/AWDCheckstyle.xml</name>
-								<location>/AWDCheckstyle.xml</location>
+								<name>.settings/AWDCheckstyleRules.xml</name>
+								<location>/AWDCheckstyleRules.xml</location>
 							</file>
 
 							<!-- pmd -->
