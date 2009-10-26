@@ -156,27 +156,41 @@
 							<projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature>
 							<!-- eclipse-cs 4.4.1 -->
 							<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
+							<!-- PMD -->
+							<projectnature>net.sourceforge.pmd.eclipse.plugin.pmdNature</projectnature>
 						</additionalProjectnatures>
 						<additionalBuildcommands>
 							<!-- 5.0 -->
 							<buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand>
 							<!-- eclipse-cs 4.4.1 -->
 							<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
+							<!-- PMD -->
+							<buildcommand>net.sourceforge.pmd.eclipse.plugin.pmdBuilder</buildcommand>
 						</additionalBuildcommands>
 
 						<downloadSources>true</downloadSources>
 						<downloadJavadocs>true</downloadJavadocs>
 						<wtpversion>2.0</wtpversion>
-						<additionalConfig>	
+						<additionalConfig>
 							<!-- checkstyle -->
-							<!-- <file>
+							<file>
 								<name>.checkstyle</name>
 								<location>/eclipseCheckstyle.xml</location>
 							</file>
 							<file>
 								<name>.settings/AWDCheckstyle.xml</name>
 								<location>/AWDCheckstyle.xml</location>
-							</file> -->
+							</file>
+
+							<!-- pmd -->
+							<file>
+								<name>.pmd</name>
+								<location>/pmd.conf</location>
+							</file>
+							<file>
+								<name>.settings/AWDPmdRules.conf</name>
+								<location>/AWDPmdRules.xml</location>
+							</file>
 							
 							<!-- formatter -->
 							<file>
@@ -206,6 +220,11 @@
 						</additionalConfig>
 					</configuration>
 					<dependencies>
+						<dependency>
+							<groupId>net.awired.parent</groupId>
+							<artifactId>parent-module-pmd</artifactId>
+							<version>${project.version}</version>
+						</dependency>
 						<dependency>
 							<groupId>net.awired.parent</groupId>
 							<artifactId>parent-module-checkstyle</artifactId>

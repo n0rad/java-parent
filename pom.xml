@@ -17,9 +17,10 @@
 	</parent>
 
 	<!-- modules -->
-	<modules>	
-		<module>modules/checkstyle</module>	
-		<module>modules/eclipse</module>	
+	<modules>
+		<module>modules/checkstyle</module>
+		<module>modules/eclipse</module>
+		<module>modules/pmd</module>
 	
 		<module>projs/java</module>
 		<module>projs/php</module>
@@ -32,9 +33,9 @@
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-checkstyle</artifactId>
 				<version>${project.version}</version>
-			</dependency>			
+			</dependency>
 		</dependencies>
-	</dependencyManagement>	
+	</dependencyManagement>
 
 	<!-- scm -->
 	<scm>
