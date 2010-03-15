@@ -16,7 +16,9 @@
    <rule ref="rulesets/design.xml/AvoidDeeplyNestedIfStmts"/>
    <rule ref="rulesets/design.xml/AvoidReassigningParameters"/>
    <rule ref="rulesets/design.xml/SwitchDensity"/>
-   <rule ref="rulesets/design.xml/ConstructorCallsOverridableMethod"/>
+   <rule ref="rulesets/design.xml/ConstructorCallsOverridableMethod">
+        <priority>3</priority>
+   </rule>
    <rule ref="rulesets/design.xml/AccessorClassGeneration"/>
    <rule ref="rulesets/design.xml/FinalFieldCouldBeStatic"/>
    <rule ref="rulesets/design.xml/CloseResource"/>
@@ -39,7 +41,9 @@
    <rule ref="rulesets/design.xml/MissingBreakInSwitch"/>
    <rule ref="rulesets/design.xml/UseNotifyAllInsteadOfNotify"/>
    <rule ref="rulesets/design.xml/AvoidInstanceofChecksInCatchClause"/>
-   <rule ref="rulesets/design.xml/AbstractClassWithoutAbstractMethod"/>
+   <rule ref="rulesets/design.xml/AbstractClassWithoutAbstractMethod">
+        <priority>3</priority>
+   </rule>
    <rule ref="rulesets/design.xml/SimplifyConditional"/>
    <rule ref="rulesets/design.xml/CompareObjectsWithEquals"/>
    <rule ref="rulesets/design.xml/PositionLiteralsFirstInComparisons"/>
@@ -56,7 +60,9 @@
    <rule ref="rulesets/design.xml/SingularField"/>
    <rule ref="rulesets/design.xml/ReturnEmptyArrayRatherThanNull"/>
    <rule ref="rulesets/design.xml/AbstractClassWithoutAnyMethod"/>
-   <rule ref="rulesets/design.xml/TooFewBranchesForASwitchStatement"/>
+   <rule ref="rulesets/design.xml/TooFewBranchesForASwitchStatement">
+     <priority>3</priority>
+   </rule>
    <rule ref="rulesets/strictexception.xml/AvoidCatchingThrowable"/>
    <rule ref="rulesets/strictexception.xml/SignatureDeclareThrowsException"/>
    <rule ref="rulesets/strictexception.xml/ExceptionAsFlowControl"/>
@@ -74,7 +80,9 @@
    <rule ref="rulesets/unusedcode.xml/UnusedPrivateMethod"/>
    <rule ref="rulesets/unusedcode.xml/UnusedFormalParameter"/>
    <rule ref="rulesets/logging-java.xml/MoreThanOneLogger"/>
-   <rule ref="rulesets/logging-java.xml/LoggerIsNotStaticFinal"/>
+   <rule ref="rulesets/logging-java.xml/LoggerIsNotStaticFinal">
+        <priority>3</priority>
+   </rule>
    <rule ref="rulesets/logging-java.xml/SystemPrintln">
      <priority>3</priority>
    </rule>
@@ -117,8 +125,12 @@
    <rule ref="rulesets/j2ee.xml/DoNotCallSystemExit"/>
    <rule ref="rulesets/j2ee.xml/StaticEJBFieldShouldBeFinal"/>
    <rule ref="rulesets/j2ee.xml/DoNotUseThreads"/>
-   <rule ref="rulesets/optimizations.xml/LocalVariableCouldBeFinal"/>
-   <rule ref="rulesets/optimizations.xml/MethodArgumentCouldBeFinal"/>
+   <rule ref="rulesets/optimizations.xml/LocalVariableCouldBeFinal">
+        <priority>5</priority>
+   </rule>
+   <rule ref="rulesets/optimizations.xml/MethodArgumentCouldBeFinal">
+        <priority>5</priority>
+   </rule>
    <rule ref="rulesets/optimizations.xml/AvoidInstantiatingObjectsInLoops"/>
    <rule ref="rulesets/optimizations.xml/UseArrayListInsteadOfVector"/>
    <rule ref="rulesets/optimizations.xml/SimplifyStartsWith"/>
