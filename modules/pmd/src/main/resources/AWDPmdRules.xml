@@ -41,9 +41,7 @@
    <rule ref="rulesets/design.xml/MissingBreakInSwitch"/>
    <rule ref="rulesets/design.xml/UseNotifyAllInsteadOfNotify"/>
    <rule ref="rulesets/design.xml/AvoidInstanceofChecksInCatchClause"/>
-   <rule ref="rulesets/design.xml/AbstractClassWithoutAbstractMethod">
-        <priority>3</priority>
-   </rule>
+   <rule ref="rulesets/design.xml/AbstractClassWithoutAbstractMethod"/>
    <rule ref="rulesets/design.xml/SimplifyConditional"/>
    <rule ref="rulesets/design.xml/CompareObjectsWithEquals"/>
    <rule ref="rulesets/design.xml/PositionLiteralsFirstInComparisons"/>
