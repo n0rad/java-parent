@@ -25,10 +25,14 @@
 		<dependency>
 			<groupId>net.awired.parent</groupId>
 			<artifactId>parent-module-checkstyle</artifactId>
+			<!-- version in hard value is seems to be needed by children projects -->
+			<version>1.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>net.awired.parent</groupId>
 			<artifactId>parent-module-pmd</artifactId>
+			<!-- version in hard value is seems to be needed by children projects -->
+			<version>1.0-SNAPSHOT</version>
 		</dependency>		
 	</dependencies>
 
@@ -234,17 +238,20 @@
 						<dependency>
 							<groupId>net.awired.parent</groupId>
 							<artifactId>parent-module-pmd</artifactId>
-							<version>${project.version}</version>
+							<!-- version in hard value is seems to be needed by children projects -->
+							<version>1.0-SNAPSHOT</version>
 						</dependency>
 						<dependency>
 							<groupId>net.awired.parent</groupId>
 							<artifactId>parent-module-checkstyle</artifactId>
-							<version>${project.version}</version>
+							<!-- version in hard value is seems to be needed by children projects -->
+							<version>1.0-SNAPSHOT</version>
 						</dependency>
 						<dependency>
 							<groupId>net.awired.parent</groupId>
 							<artifactId>parent-module-eclipse</artifactId>
-							<version>${project.version}</version>
+							<!-- version in hard value is seems to be needed by children projects -->
+							<version>1.0-SNAPSHOT</version>
 						</dependency>
 					</dependencies>					
 				</plugin>
