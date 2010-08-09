@@ -20,28 +20,39 @@
 	</modules>
 
 
+	<dependencies>
+		<dependency>
+			<groupId>net.awired.parent</groupId>
+			<artifactId>parent-module-checkstyle</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>net.awired.parent</groupId>
+			<artifactId>parent-module-pmd</artifactId>
+		</dependency>		
+	</dependencies>
+
 
 	<!-- BUILD PART -->
 	<build>
 		<plugins>
 
-	<!--  checkstyle -->
-	<plugin>
-		<groupId>org.apache.maven.plugins</groupId>
-		<artifactId>maven-checkstyle-plugin</artifactId>
-		<configuration>
-			<failOnViolation>true</failOnViolation>
-			<enableRulesSummary>true</enableRulesSummary>
-			<configLocation>AWDCheckstyleRules.xml</configLocation>
-		</configuration>
-		<dependencies>
-			<dependency>
-				<groupId>net.awired.parent.parent-java</groupId>
-				<artifactId>parent-java-checkstyle</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-		</dependencies>
-	</plugin>
+			<!--  checkstyle -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-checkstyle-plugin</artifactId>
+				<configuration>
+					<failOnViolation>true</failOnViolation>
+					<enableRulesSummary>true</enableRulesSummary>
+					<configLocation>AWDCheckstyleRules.xml</configLocation>
+				</configuration>
+				<dependencies>
+					<dependency>
+					<groupId>net.awired.parent</groupId>
+					<artifactId>parent-module-checkstyle</artifactId>
+						<version>${project.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
 
 
 
@@ -51,7 +62,6 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-
 <!--					<fork>true</fork>-->
 <!--					<meminitial>256m</meminitial>-->
 <!--					<maxmem>1024m</maxmem>-->
@@ -242,12 +252,6 @@
 		<!-- plugin management -->
 		<pluginManagement>
 			<plugins>
-
-
-
-
-
-
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-gpg-plugin</artifactId>
@@ -394,6 +398,7 @@
 			<!--				</reportSets>-->
 			<!--			</plugin>-->
 
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -409,6 +414,7 @@
 <!--					<targetJdk>1.5</targetJdk>-->
 <!--				</configuration>-->
 <!--			</plugin>-->
+
 
 <!--			<plugin>-->
 <!--				<groupId>org.codehaus.mojo</groupId>-->

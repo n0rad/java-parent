@@ -31,9 +31,33 @@
 		<dependencies>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-checkstyle</artifactId>
+				<artifactId>parent-module-checkstyle</artifactId>
 				<version>${project.version}</version>
 			</dependency>
+			<dependency>
+				<groupId>net.awired.parent</groupId>
+				<artifactId>parent-module-eclipse</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.awired.parent</groupId>
+				<artifactId>parent-module-pmd</artifactId>			
+				<version>${project.version}</version>
+			</dependency>
+
+			<dependency>
+				<groupId>net.awired.parent.parent-php</groupId>
+				<artifactId>parent-php</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.awired.parent.parent-java</groupId>
+				<artifactId>parent-java</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			
+			
+			
 		</dependencies>
 	</dependencyManagement>
 
