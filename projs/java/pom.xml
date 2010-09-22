@@ -190,47 +190,47 @@
 							<!-- checkstyle -->
 							<file>
 								<name>.checkstyle</name>
-								<location>/checkstyle.conf</location>
+								<location>checkstyle.conf</location>
 							</file>
 							<file>
 								<name>.settings/AWDCheckstyleRules.xml</name>
-								<location>/AWDCheckstyleRules.xml</location>
+								<location>AWDCheckstyleRules.xml</location>
 							</file>
 
 							<!-- pmd -->
 							<file>
 								<name>.pmd</name>
-								<location>/pmd.conf</location>
+								<location>pmd.conf</location>
 							</file>
 							<file>
 								<name>.settings/AWDPmdRules.conf</name>
-								<location>/AWDPmdRules.xml</location>
+								<location>AWDPmdRules.xml</location>
 							</file>
 							
 							<!-- formatter -->
 							<file>
 								<name>.settings/org.eclipse.jdt.core.prefs</name>
-								<location>/AWDFormatterCodeStyle.conf</location>
+								<location>AWDFormatterCodeStyle.conf</location>
 							</file>
 							<file>
 								<name>.settings/org.eclipse.jdt.ui.prefs</name>
-								<location>/AWDFormatterProfile.conf</location>
+								<location>AWDFormatterProfile.conf</location>
 							</file>
 							
 							<!-- Resources -->
 							<file>
 								<name>.settings/org.eclipse.core.resources.prefs</name>
-								<location>/AWDResource.conf</location>
+								<location>AWDResource.conf</location>
 							</file>
 							<file>
 								<name>.settings/org.eclipse.core.runtime.prefs</name>
-								<location>/AWDResourceRuntime.conf</location>
+								<location>AWDResourceRuntime.conf</location>
 							</file>
 							
 							<!-- CleanUp -->
 							<file>
 								<name>.settings/org.eclipse.jdt.ui.prefs</name>
-								<location>/AWDCleanUp.conf</location>
+								<location>AWDCleanUp.conf</location>
 							</file>
 						</additionalConfig>
 					</configuration>
@@ -655,10 +655,10 @@
 
 
 <repositories>
-<repository>
-<id>java.net</id>
-<url>http://download.java.net/maven/2</url>
-<name>java.net</name>
-</repository>
+	<repository>
+		<id>java.net</id>
+		<url>http://download.java.net/maven/2</url>
+		<name>java.net</name>
+	</repository>
 </repositories>
 </project>
