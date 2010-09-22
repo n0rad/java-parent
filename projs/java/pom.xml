@@ -41,6 +41,7 @@
 	</dependencies>
 
 
+
 	<!-- BUILD PART -->
 	<build>
 		<plugins>
@@ -71,6 +72,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>2.3.2</version>
 				<configuration>
+					<encoding>UTF-8</encoding>
 					<source>1.6</source>
 					<target>1.6</target>
 					<!--					<fork>true</fork>-->
@@ -79,9 +81,12 @@
 				</configuration>
 			</plugin>
 
-
-
-
+	            <plugin>
+      	          <artifactId>maven-resources-plugin</artifactId>
+            	    <configuration>
+                  	  <encoding>UTF-8</encoding>
+	                </configuration>
+      	      </plugin>
 
 			<!-- war -->
 			<plugin>

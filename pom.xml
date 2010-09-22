@@ -29,11 +29,11 @@
 		<module>modules/checkstyle</module>
 		<module>modules/eclipse</module>
 		<module>modules/pmd</module>
-	
+
 		<module>projs/java</module>
 		<module>projs/php</module>
 	</modules>
-	
+
 	<!-- dependency management -->
 	<dependencyManagement>
 		<dependencies>
@@ -49,7 +49,7 @@
 			</dependency>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-module-pmd</artifactId>			
+				<artifactId>parent-module-pmd</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 
@@ -63,9 +63,6 @@
 				<artifactId>parent-java</artifactId>
 				<version>${project.version}</version>
 			</dependency>
-			
-			
-			
 		</dependencies>
 	</dependencyManagement>
 
