@@ -485,8 +485,26 @@
 	</reporting>
 
 
+	<!-- additionnal plugin repositories -->
 	<pluginRepositories>
+		<!-- central repo -->
+		<pluginRepository>
+			<id>central</id>
+			<name>maven repo</name>
+			<url>http://repo1.maven.org/maven2/</url>
+		</pluginRepository>
+
+		<!-- not used anymore because should be in repo1
+			moreover the codehaus repo has moved to :
+			https://nexus.codehaus.org/content/repositories/releases/ and snapshots/
+		<pluginRepository>
+			<id>Codehaus Snapshots</id>
+			<url>http://snapshots.repository.codehaus.org/</url>
+		</pluginRepository>-->
+
+
 	</pluginRepositories>
+
 
 	<!--
 		#####################################################################################
