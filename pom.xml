@@ -6,7 +6,7 @@
 
 	<name>Awired Parent</name>
 	<description>The Awired Parent Project</description>
-	<version>1.5</version>
+	<version>1.6-SNAPSHOT</version>
 
 	<parent>
 		<groupId>net.awired</groupId>
@@ -66,9 +66,9 @@
 
 	<!-- scm -->
 	<scm>
-		<connection>scm:svn:http://repos.awired.net/svn/parent/tags/parent-1.5</connection>
-		<developerConnection>scm:svn:http://repos.awired.net/svn/parent/tags/parent-1.5</developerConnection>
-		<url>http://svn.awired.net/parent/tags/parent-1.5</url>
+		<connection>scm:svn:http://repos.awired.net/svn/parent/trunk</connection>
+		<developerConnection>scm:svn:http://repos.awired.net/svn/parent/trunk</developerConnection>
+		<url>http://svn.awired.net/parent/trunk</url>
 	</scm>
 
 	<!-- distribution -->
