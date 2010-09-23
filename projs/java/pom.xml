@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent.parent-java</groupId>
 	<artifactId>parent-java</artifactId>
@@ -20,24 +21,6 @@
 	</modules>
 
 
-	<dependencies>
-		<dependency>
-			<groupId>net.awired.parent</groupId>
-			<artifactId>parent-module-checkstyle</artifactId>
-			<!--
-				version in hard value is seems to be needed by children projects
-			-->
-			<version>1.5-SNAPSHOT</version>
-		</dependency>
-		<dependency>
-			<groupId>net.awired.parent</groupId>
-			<artifactId>parent-module-pmd</artifactId>
-			<!--
-				version in hard value is seems to be needed by children projects
-			-->
-			<version>1.5-SNAPSHOT</version>
-		</dependency>
-	</dependencies>
 
 
 
@@ -80,12 +63,13 @@
 				</configuration>
 			</plugin>
 
-	            <plugin>
-      	          <artifactId>maven-resources-plugin</artifactId>
-            	    <configuration>
-                  	  <encoding>UTF-8</encoding>
-	                </configuration>
-      	      </plugin>
+			<plugin>
+				<artifactId>maven-resources-plugin</artifactId>
+				<version>2.4.3</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
 
 			<!-- war -->
 			<plugin>
@@ -125,7 +109,8 @@
 							<Specification-Version>${pom.version}</Specification-Version>
 							<Implementation-Version>${buildNumber}</Implementation-Version>
 							</manifestEntries>
-							<manifestFile>${basedir}/src/main/resources/MANIFEST.MF</manifestFile -->
+							<manifestFile>${basedir}/src/main/resources/MANIFEST.MF</manifestFile
+						-->
 						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
@@ -303,7 +288,8 @@
 				<!--
 					>plugin> <groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-surefire-plugin</artifactId>
-					<version>2.3</version> </plugin -->
+					<version>2.3</version> </plugin
+				-->
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-assembly-plugin</artifactId>
@@ -374,7 +360,8 @@
 			<!--
 				plugin> <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-project-info-reports-plugin</artifactId>
-				<version>2.0.1</version > </plugin -->
+				<version>2.0.1</version > </plugin
+			-->
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
 				<version>2.4</version>
@@ -399,7 +386,8 @@
 			<!--
 				plugin> <groupId>org.codehaus.mojo</groupId>
 				<artifactId>jdepend-maven-plugin</artifactId>
-				<version>2.0-SNAPSHOT</version> </plugin -->
+				<version>2.0-SNAPSHOT</version> </plugin
+			-->
 
 			<!--			<plugin>-->
 			<!--				<artifactId>-->
@@ -448,7 +436,8 @@
 			<!--
 				>plugin> <groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-report-plugin</artifactId>
-				<version>2.4.3</version> </plugin -->
+				<version>2.4.3</version> </plugin
+			-->
 			<!--			<plugin>-->
 			<!--				<groupId>org.apache.maven.plugins</groupId>-->
 			<!--				<artifactId>maven-plugin-plugin</artifactId>-->
@@ -494,13 +483,14 @@
 			<url>http://repo1.maven.org/maven2/</url>
 		</pluginRepository>
 
-		<!-- not used anymore because should be in repo1
-			moreover the codehaus repo has moved to :
-			https://nexus.codehaus.org/content/repositories/releases/ and snapshots/
-		<pluginRepository>
-			<id>Codehaus Snapshots</id>
+		<!--
+			not used anymore because should be in repo1 moreover the codehaus
+			repo has moved to :
+			https://nexus.codehaus.org/content/repositories/releases/ and
+			snapshots/ <pluginRepository> <id>Codehaus Snapshots</id>
 			<url>http://snapshots.repository.codehaus.org/</url>
-		</pluginRepository>-->
+			</pluginRepository>
+		-->
 
 
 	</pluginRepositories>
