@@ -128,10 +128,6 @@
 				<version>2.1</version>
 				<configuration>
 					<archive>
-						<manifest>
-							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-						</manifest>
 						<manifestEntries>
 							<Project-Name>${project.name}</Project-Name>
 							<Project-Version>${project.version}</Project-Version>
