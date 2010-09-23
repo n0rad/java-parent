@@ -6,13 +6,13 @@
 
 	<name>Awired Parent - Java - Spring Bundle</name>
 	<description>The Awired Spring Bundle Java Parent Project</description>
-	<version>1.5-SNAPSHOT</version>
+	<version>1.5</version>
 	<inceptionYear>2008</inceptionYear>
 
 	<parent>
 		<groupId>net.awired.parent.parent-java</groupId>
 		<artifactId>parent-java</artifactId>
-		<version>1.5-SNAPSHOT</version>
+		<version>1.5</version>
 		<relativePath>../../</relativePath>
 	</parent>
 
