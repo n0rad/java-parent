@@ -41,7 +41,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-checkstyle</artifactId>
-						<version>1.4-SNAPSHOT</version>
+						<version>1.7-SNAPSHOT</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -232,7 +232,7 @@
 						<!--
 							version in hard value is seems to be needed by children projects
 						-->
-						<version>1.4-SNAPSHOT</version>
+						<version>1.7-SNAPSHOT</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
@@ -240,7 +240,7 @@
 						<!--
 							version in hard value is seems to be needed by children projects
 						-->
-						<version>1.4-SNAPSHOT</version>
+						<version>1.7-SNAPSHOT</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
@@ -248,7 +248,7 @@
 						<!--
 							version in hard value is seems to be needed by children projects
 						-->
-						<version>1.4-SNAPSHOT</version>
+						<version>1.7-SNAPSHOT</version>
 					</dependency>
 				</dependencies>
 			</plugin>
