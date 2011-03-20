@@ -98,8 +98,6 @@
 							<Project-Creator>${project.organization.name}</Project-Creator>
 							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
-							<Source-JDK>${maven.compile.source}</Source-JDK>
-							<Target-JDK>${maven.compile.target}</Target-JDK>
 							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
@@ -122,8 +120,6 @@
 							<Project-Creator>${project.organization.name}</Project-Creator>
 							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
-							<Source-JDK>${maven.compile.source}</Source-JDK>
-							<Target-JDK>${maven.compile.target}</Target-JDK>
 							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
@@ -141,8 +137,6 @@
 							<Project-Creator>${project.organization.name}</Project-Creator>
 							<Project-CreatorId>${project.groupId}</Project-CreatorId>
 							<Project-Website>${project.url}</Project-Website>
-							<Source-JDK>${maven.compile.source}</Source-JDK>
-							<Target-JDK>${maven.compile.target}</Target-JDK>
 							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
