@@ -193,7 +193,7 @@
 		<site>
 			<id>awired-web</id>
 			<name>awired web deployment</name>
-			<url>dav:http://projs.awired.net/parent</url>
+			<url>dav:http://projs.awired.net/${project.artifactId}</url>
 		</site>
 	</distributionManagement>
 
