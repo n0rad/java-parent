@@ -22,6 +22,11 @@
 	<!-- default properties -->
 	<properties>
 		<organization.logo>http://awired.net/images/awired.png</organization.logo>
+
+		<sourceEncoding>UTF-8</sourceEncoding>
+		<outputEncoding>UTF-8</outputEncoding>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>	
 	
 	<prerequisites>
