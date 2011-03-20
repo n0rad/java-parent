@@ -156,6 +156,8 @@
 						<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
 						<!-- PMD -->
 						<projectnature>net.sourceforge.pmd.eclipse.plugin.pmdNature</projectnature>
+						<!-- M2E -->
+		                <projectnature>org.maven.ide.eclipse.maven2Nature</projectnature>
 					</additionalProjectnatures>
 					<additionalBuildcommands>
 						<!-- 5.0 -->
@@ -164,6 +166,8 @@
 						<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
 						<!-- PMD -->
 						<buildcommand>net.sourceforge.pmd.eclipse.plugin.pmdBuilder</buildcommand>
+						<!-- M2E -->
+						<buildcommand>org.maven.ide.eclipse.maven2Builder</buildcommand>
 					</additionalBuildcommands>
 
 					<downloadSources>true</downloadSources>
