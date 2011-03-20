@@ -4,7 +4,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.9-SNAPSHOT</version>
+	<version>1.9</version>
 
 	<name>Awired Parent</name>
 	<description>
