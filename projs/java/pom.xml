@@ -6,12 +6,12 @@
 
 	<name>Awired Parent - Java</name>
 	<description>The Awired Java Parent Project</description>
-	<version>1.8-SNAPSHOT</version>
+	<version>1.8</version>
 
 	<parent>
 		<groupId>net.awired.parent</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.8-SNAPSHOT</version>
+		<version>1.8</version>
 		<relativePath>../../</relativePath>
 	</parent>
 
