@@ -44,15 +44,15 @@
 
 	<!-- scm -->
 	<scm>
-		<connection>scm:git:git://github.com/awired/parent.git</connection>
-		<developerConnection>scm:git:https://github.com/awired/parent.git</developerConnection>
-		<url>https://github.com/awired/parent</url>
+	    <connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
+		<url>https://github.com/awired/${project.artifactId}</url>
 	</scm>
 
 	<!-- bugtracker -->
 	<issueManagement>
 		<system>Github</system>
-		<url>https://github.com/awired/parent/issues</url>
+		<url>https://github.com/awired/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<!-- continuous integration -->
