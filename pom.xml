@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
@@ -18,7 +19,7 @@
 		<name>Awired Network</name>
 		<url>http://awired.net/</url>
 	</organization>
-	
+
 	<!-- default properties -->
 	<properties>
 		<organization.logo>http://awired.net/images/awired.png</organization.logo>
@@ -27,8 +28,8 @@
 		<outputEncoding>UTF-8</outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>	
-	
+	</properties>
+
 	<prerequisites>
 		<maven>2.0.9</maven>
 	</prerequisites>
@@ -44,8 +45,8 @@
 
 	<!-- scm -->
 	<scm>
-	    <connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
-        <developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
+		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/awired/${project.artifactId}</url>
 	</scm>
 
@@ -86,6 +87,7 @@
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-checkstyle</artifactId>
 				<version>${project.version}</version>
+				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
@@ -96,6 +98,7 @@
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-pmd</artifactId>
 				<version>${project.version}</version>
+				<scope>provided</scope>
 			</dependency>
 
 			<dependency>
@@ -105,7 +108,7 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-	
+
 	<build>
 		<defaultGoal>clean install</defaultGoal>
 
@@ -130,16 +133,16 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-site-plugin</artifactId>
 				<version>2.2</version>
-<!-- 				<configuration> -->
-<!-- 					<siteDirectory>src/site</siteDirectory> -->
-<!-- 						templateDirectory>${basedir}</templateDirectory> -->
-<!-- 						<template>maven-site.vm</template -->
-<!-- 					<locales>en,fr</locales> -->
-<!-- 				</configuration> -->
+				<!-- <configuration> -->
+				<!-- <siteDirectory>src/site</siteDirectory> -->
+				<!-- templateDirectory>${basedir}</templateDirectory> -->
+				<!-- <template>maven-site.vm</template -->
+				<!-- <locales>en,fr</locales> -->
+				<!-- </configuration> -->
 			</plugin>
 		</plugins>
 
- 		<extensions>
+		<extensions>
 			<!-- webdav wagon -->
 			<extension>
 				<groupId>org.apache.maven.wagon</groupId>
