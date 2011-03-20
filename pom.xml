@@ -1,19 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-
-	<name>Awired Parent</name>
-	<description>The Awired Parent Project</description>
 	<version>1.8-SNAPSHOT</version>
 
-	<parent>
-		<groupId>net.awired</groupId>
-		<artifactId>awired</artifactId>
-		<version>1.5</version>
-	</parent>
+	<name>Awired Parent</name>
+	<description>
+		Awired.net is an open source community composed of IT engineers and Professionals working together on personal projects.
+		Our goal is to provide high quality softwares by using latest tools in application design and code analyze, and also by taking as much time as needed to ensure the best.  
+	</description>
+	<url>http://awired.net/</url>
 
+	<!-- organisation -->
+	<organization>
+		<name>Awired Network</name>
+		<url>http://awired.net/</url>
+	</organization>
+	
+	<!-- default properties -->
+	<properties>
+		<organization.logo>http://awired.net/images/awired.png</organization.logo>
+	</properties>	
+	
+	<prerequisites>
+		<maven>2.0.9</maven>
+	</prerequisites>
+
+	<!-- licence -->
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -22,6 +37,34 @@
 		</license>
 	</licenses>
 
+	<!-- scm -->
+	<scm>
+		<connection>scm:git:git://github.com/awired/parent.git</connection>
+		<developerConnection>scm:git:https://github.com/awired/parent.git</developerConnection>
+		<url>https://github.com/awired/parent</url>
+	</scm>
+
+	<!-- bugtracker -->
+	<issueManagement>
+		<system>Github</system>
+		<url>https://github.com/awired/parent/issues</url>
+	</issueManagement>
+
+	<!-- continuous integration -->
+	<ciManagement>
+		<system>Jenkins</system>
+		<url>http://ci.awired.net/jenkins/job/${project.groupId}_${project.artifactId}/</url>
+		<notifiers>
+			<notifier>
+				<type>mail</type>
+				<configuration>
+					<address>dev@awired.net</address>
+				</configuration>
+			</notifier>
+		</notifiers>
+	</ciManagement>
+
+
 	<!-- modules -->
 	<modules>
 		<module>modules/checkstyle</module>
@@ -29,7 +72,6 @@
 		<module>modules/pmd</module>
 
 		<module>projs/java</module>
-		<module>projs/php</module>
 	</modules>
 
 	<!-- dependency management -->
@@ -52,41 +94,72 @@
 			</dependency>
 
 			<dependency>
-				<groupId>net.awired.parent.parent-php</groupId>
-				<artifactId>parent-php</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>net.awired.parent.parent-java</groupId>
 				<artifactId>parent-java</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+	
+	<build>
+		<defaultGoal>clean install</defaultGoal>
 
-	<!-- scm -->
-	<scm>
-		<connection>scm:svn:http://repos.awired.net/svn/parent/trunk</connection>
-		<developerConnection>scm:svn:http://repos.awired.net/svn/parent/trunk</developerConnection>
-		<url>http://svn.awired.net/parent/trunk</url>
-	</scm>
+		<plugins>
+			<!-- scm -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.4</version>
+				<!--
+					<connectionType>connection</connectionType>
+					<username>${scm.username}</username>
+					<password>${scm.password}</password> <goals>install</goals>
+					</configuration -->
+			</plugin>
 
-	<!-- distribution -->
-	<distributionManagement>
-		<site>
-			<id>awired-web</id>
-			<name>awired web deployment</name>
-			<url>dav:http://projs.awired.net/parent</url>
-		</site>
-	</distributionManagement>
+			<!-- release -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<version>2.0</version>
+				<configuration>
+					<username>${scm.username}</username>
+					<password>${scm.password}</password>
+				</configuration>
+			</plugin>
 
+
+			<!-- website -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-site-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<siteDirectory>src/site</siteDirectory>
+					<!--
+						templateDirectory>${basedir}</templateDirectory>
+						<template>maven-site.vm</template -->
+					<locales>en,fr</locales>
+				</configuration>
+			</plugin>
+		</plugins>
+
+		<extensions>
+			<!-- webdav wagon -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav</artifactId>
+				<version>1.0-beta-2</version>
+			</extension>
+		</extensions>
+	</build>
 
 	<!-- additionnal maven repositories -->
 	<repositories>
 		<repository>
 			<id>awired-repo</id>
 			<name>Awired Releases Repository</name>
-			<url>http://mvn.awired.net/content/repositories/releases/</url>
+			<url>http://mvn.awired.net/nexus/content/repositories/releases/</url>
 			<releases>
 				<enabled>true</enabled>
 			</releases>
@@ -94,10 +167,11 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</repository>
+
 		<repository>
 			<id>awired-snap-repo</id>
 			<name>Awired Snapshots Repository</name>
-			<url>http://mvn.awired.net/content/repositories/snapshots/</url>
+			<url>http://mvn.awired.net/nexus/content/repositories/snapshots/</url>
 			<releases>
 				<enabled>false</enabled>
 			</releases>
@@ -106,5 +180,26 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
+	<!-- distribution part -->
+	<distributionManagement>
+		<!-- repository -->
+		<repository>
+			<id>awired-repo</id>
+			<name>Awired Releases Repository</name>
+			<url>dav:http://mvn.awired.net/nexus/content/repositories/releases/</url>
+		</repository>
+		<!-- snapshot repository -->
+		<snapshotRepository>
+			<id>awired-snap-repo</id>
+			<name>Awired Snapshot Repository</name>
+			<url>dav:http://mvn.awired.net/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+		<site>
+			<id>awired-web</id>
+			<name>awired web deployment</name>
+			<url>dav:http://projs.awired.net/parent</url>
+		</site>
+	</distributionManagement>
 
 </project>

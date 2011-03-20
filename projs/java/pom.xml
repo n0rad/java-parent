@@ -16,7 +16,9 @@
 	</parent>
 
 	<modules>
+		<!-- 
 		<module>projs/spring-bundle</module>
+		-->
 	</modules>
 
 
