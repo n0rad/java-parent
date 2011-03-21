@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent.parent-java</groupId>
 	<artifactId>parent-java</artifactId>
@@ -21,6 +22,7 @@
 		<targetJdk>1.6</targetJdk>
 		<checkstyle.version>2.6</checkstyle.version>
 		<pmd.version>2.5</pmd.version>
+		<dep.project.version>1.11-SNAPSHOT</dep.project.version>
 	</properties>
 
 	<!-- BUILD PART -->
@@ -40,7 +42,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-checkstyle</artifactId>
-						<version>1.10-SNAPSHOT</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -59,7 +61,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-pmd</artifactId>
-						<version>1.10-SNAPSHOT</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -157,7 +159,7 @@
 						<!-- PMD -->
 						<projectnature>net.sourceforge.pmd.eclipse.plugin.pmdNature</projectnature>
 						<!-- M2E -->
-		                <projectnature>org.maven.ide.eclipse.maven2Nature</projectnature>
+						<projectnature>org.maven.ide.eclipse.maven2Nature</projectnature>
 					</additionalProjectnatures>
 					<additionalBuildcommands>
 						<!-- 5.0 -->
@@ -169,6 +171,11 @@
 						<!-- M2E -->
 						<buildcommand>org.maven.ide.eclipse.maven2Builder</buildcommand>
 					</additionalBuildcommands>
+
+					<!-- classpath -->
+					<classpathContainers>
+						<classpathContainer>org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER</classpathContainer>
+					</classpathContainers>
 
 					<downloadSources>true</downloadSources>
 					<downloadJavadocs>true</downloadJavadocs>
@@ -225,17 +232,17 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-pmd</artifactId>
-						<version>1.10-SNAPSHOT</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-checkstyle</artifactId>
-						<version>1.10-SNAPSHOT</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-eclipse</artifactId>
-						<version>1.10-SNAPSHOT</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -308,6 +315,32 @@
 			</plugin><!-- endof site plugin -->
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>eclipseplugin</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-antrun-plugin</artifactId>
+						<executions>
+							<execution>
+								<phase>generate-resources</phase>
+								<goals>
+									<goal>run</goal>
+								</goals>
+								<configuration>
+									<tasks>
+										<delete file="${basedir}/.classpath" />
+									</tasks>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 	<repositories>
 		<repository>
