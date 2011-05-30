@@ -4,7 +4,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.11-SNAPSHOT</version>
+	<version>1.11</version>
 
 	<name>Awired Parent</name>
 	<description>
@@ -28,7 +28,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		
-		<dep.project.version>1.11-SNAPSHOT</dep.project.version>		
+		<dep.project.version>1.11</dep.project.version>		
 	</properties>
 
 	<prerequisites>
