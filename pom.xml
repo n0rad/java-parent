@@ -202,6 +202,16 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
+
+
+		<extensions>
+			<!-- webdav wagon -->
+			<extension>
+				<groupId>org.apache.maven.wagon</groupId>
+				<artifactId>wagon-webdav-jackrabbit</artifactId>
+				<version>1.0-beta-7</version>
+			</extension>
+		</extensions>
 	</build>
 
 	<!-- avoid using release repo -->
@@ -246,16 +256,16 @@
 		</snapshotRepository>
 
 
-<!-- 		<repository> -->
-<!-- 			<id>sonatype-nexus-staging</id> -->
-<!-- 			<name>Nexus Release Repository</name> -->
-<!-- 			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
-<!-- 		</repository> -->
-<!-- 		<snapshotRepository> -->
-<!-- 			<id>sonatype-nexus-snapshots</id> -->
-<!-- 			<name>Sonatype Nexus Snapshots</name> -->
-<!-- 			<url>${sonatypeOssDistMgmtSnapshotsUrl}</url> -->
-<!-- 		</snapshotRepository> -->
+		<!-- <repository> -->
+		<!-- <id>sonatype-nexus-staging</id> -->
+		<!-- <name>Nexus Release Repository</name> -->
+		<!-- <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
+		<!-- </repository> -->
+		<!-- <snapshotRepository> -->
+		<!-- <id>sonatype-nexus-snapshots</id> -->
+		<!-- <name>Sonatype Nexus Snapshots</name> -->
+		<!-- <url>${sonatypeOssDistMgmtSnapshotsUrl}</url> -->
+		<!-- </snapshotRepository> -->
 	</distributionManagement>
 
 	<profiles>
