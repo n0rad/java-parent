@@ -112,12 +112,12 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Project-Name>${project.name}</Project-Name>
-							<Project-Version>${project.version}</Project-Version>
-							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>
-							<Project-Website>${project.url}</Project-Website>
-							<Copyright>${project.organization.name}</Copyright>
+<!-- 							<Project-Name>${project.name}</Project-Name> -->
+<!-- 							<Project-Version>${project.version}</Project-Version> -->
+<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
+<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
+<!-- 							<Project-Website>${project.url}</Project-Website> -->
+<!-- 							<Copyright>${project.organization.name}</Copyright> -->
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -130,16 +130,16 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+<!-- 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> -->
+<!-- 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries> -->
 						</manifest>
 						<manifestEntries>
-							<Project-Name>${project.name}</Project-Name>
-							<Project-Version>${project.version}</Project-Version>
-							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>
-							<Project-Website>${project.url}</Project-Website>
-							<Copyright>${project.organization.name}</Copyright>
+<!-- 							<Project-Name>${project.name}</Project-Name> -->
+<!-- 							<Project-Version>${project.version}</Project-Version> -->
+<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
+<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
+<!-- 							<Project-Website>${project.url}</Project-Website> -->
+<!-- 							<Copyright>${project.organization.name}</Copyright> -->
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -151,12 +151,12 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-							<Project-Name>${project.name}</Project-Name>
-							<Project-Version>${project.version}</Project-Version>
-							<Project-Creator>${project.organization.name}</Project-Creator>
-							<Project-CreatorId>${project.groupId}</Project-CreatorId>
-							<Project-Website>${project.url}</Project-Website>
-							<Copyright>${project.organization.name}</Copyright>
+<!-- 							<Project-Name>${project.name}</Project-Name> -->
+<!-- 							<Project-Version>${project.version}</Project-Version> -->
+<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
+<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
+<!-- 							<Project-Website>${project.url}</Project-Website> -->
+<!-- 							<Copyright>${project.organization.name}</Copyright> -->
 						</manifestEntries>
 					</archive>
 				</configuration>

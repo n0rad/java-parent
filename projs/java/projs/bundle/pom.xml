@@ -18,6 +18,7 @@
 
 	<properties>
 		<manifest-location>META-INF</manifest-location>
+		<dependencies.target>${project.build.directory}/lib</dependencies.target>
 	</properties>
 
 	<parent>
@@ -38,6 +39,7 @@
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
 			<version>1.6.1</version>
+			<scope>provided</scope>
 		</dependency>
 
 
@@ -134,7 +136,9 @@
 									<goal>copy-dependencies</goal>
 								</goals>
 								<configuration>
-									<outputDirectory>${project.build.directory}/lib</outputDirectory>
+									<excludeScope>test</excludeScope>
+									<includeScope>runtime</includeScope>
+									<outputDirectory>${dependencies.target}</outputDirectory>
 								</configuration>
 							</execution>
 						</executions>
