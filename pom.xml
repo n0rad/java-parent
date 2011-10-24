@@ -13,7 +13,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.12-SNAPSHOT</version>
+	<version>1.13-SNAPSHOT</version>
 
 	<name>Awired Parent</name>
 	<description><![CDATA[Awired.net is an open source community composed of IT engineers and Professionals working together on personal projects.
@@ -35,9 +35,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<dep.project.version>1.12-SNAPSHOT</dep.project.version>
-
-		<sonatypeOssDistMgmtSnapshotsUrl>https://oss.sonatype.org/content/repositories/snapshots/</sonatypeOssDistMgmtSnapshotsUrl>
+		<dep.project.version>1.13-SNAPSHOT</dep.project.version>
 	</properties>
 
 	<prerequisites>
@@ -243,29 +241,29 @@
 	<!-- distribution part -->
 	<distributionManagement>
 		<!-- repository -->
-		<repository>
-			<id>awired-repo</id>
-			<name>Awired Releases Repository</name>
-			<url>dav:http://mvn.awired.net/nexus/content/repositories/releases/</url>
-		</repository>
-		<!-- snapshot repository -->
-		<snapshotRepository>
-			<id>awired-snap-repo</id>
-			<name>Awired Snapshot Repository</name>
-			<url>dav:http://mvn.awired.net/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-
-
 		<!-- <repository> -->
-		<!-- <id>sonatype-nexus-staging</id> -->
-		<!-- <name>Nexus Release Repository</name> -->
-		<!-- <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url> -->
+		<!-- <id>awired-repo</id> -->
+		<!-- <name>Awired Releases Repository</name> -->
+		<!-- <url>dav:http://mvn.awired.net/nexus/content/repositories/releases/</url> -->
 		<!-- </repository> -->
+		<!-- snapshot repository -->
 		<!-- <snapshotRepository> -->
-		<!-- <id>sonatype-nexus-snapshots</id> -->
-		<!-- <name>Sonatype Nexus Snapshots</name> -->
-		<!-- <url>${sonatypeOssDistMgmtSnapshotsUrl}</url> -->
+		<!-- <id>awired-snap-repo</id> -->
+		<!-- <name>Awired Snapshot Repository</name> -->
+		<!-- <url>dav:http://mvn.awired.net/nexus/content/repositories/snapshots/</url> -->
 		<!-- </snapshotRepository> -->
+
+
+		<repository>
+			<id>sonatype-nexus-staging</id>
+			<name>Nexus Release Repository</name>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+		<snapshotRepository>
+			<id>sonatype-nexus-snapshots</id>
+			<name>Sonatype Nexus Snapshots</name>
+			<url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+		</snapshotRepository>
 	</distributionManagement>
 
 	<profiles>
