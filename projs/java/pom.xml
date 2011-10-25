@@ -59,7 +59,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-checkstyle</artifactId>
-						<version>${pom.version}</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -78,7 +78,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-pmd</artifactId>
-						<version>${pom.version}</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -249,17 +249,17 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-pmd</artifactId>
-						<version>${pom.version}</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-checkstyle</artifactId>
-						<version>${pom.version}</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-module-eclipse</artifactId>
-						<version>${pom.version}</version>
+						<version>${dep.project.version}</version>
 					</dependency>
 				</dependencies>
 			</plugin>
