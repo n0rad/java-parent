@@ -13,7 +13,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.13-SNAPSHOT</version>
+	<version>1.12-SNAPSHOT</version>
 
 	<name>Awired Parent</name>
 	<description><![CDATA[Awired.net is an open source community composed of IT engineers and Professionals working together on personal projects.
@@ -34,8 +34,6 @@
 		<outputEncoding>UTF-8</outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<dep.project.version>1.13-SNAPSHOT</dep.project.version>
 	</properties>
 
 	<prerequisites>
@@ -103,24 +101,24 @@
 			<dependency>
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-checkstyle</artifactId>
-				<version>${dep.project.version}</version>
+				<version>${pom.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-eclipse</artifactId>
-				<version>${dep.project.version}</version>
+				<version>${pom.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-pmd</artifactId>
-				<version>${dep.project.version}</version>
+				<version>${pom.version}</version>
 				<scope>provided</scope>
 			</dependency>
 			<dependency>
 				<groupId>net.awired.parent</groupId>
 				<artifactId>parent-module-license</artifactId>
-				<version>${dep.project.version}</version>
+				<version>${pom.version}</version>
 				<scope>provided</scope>
 			</dependency>
 
