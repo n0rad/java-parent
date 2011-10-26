@@ -162,7 +162,6 @@
 						<exclude>.externalToolBuilders/**</exclude>
 						<exclude>.pmd/**</exclude>
 						<exclude>src/test/resources/**</exclude>
-						<exclude>src/main/webapp/js/jquery/**</exclude>
 						<exclude>src/main/xsd/**</exclude>
 						<exclude>infinitest.filters</exclude>
 					</excludes>
@@ -199,31 +198,10 @@
 				</plugin>
 			</plugins>
 		</pluginManagement>
-
-
-		<extensions>
-			<!-- webdav wagon -->
-			<extension>
-				<groupId>org.apache.maven.wagon</groupId>
-				<artifactId>wagon-webdav-jackrabbit</artifactId>
-				<version>1.0-beta-7</version>
-			</extension>
-		</extensions>
 	</build>
 
 	<!-- avoid using release repo -->
 	<repositories>
-		<repository>
-			<id>awired</id>
-			<name>Awired public</name>
-			<url>http://mvn.awired.net/nexus/content/groups/public/</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
 		<repository>
 			<id>sonatype-nexus-snapshots</id>
 			<name>Sonatype Nexus Snapshots</name>
@@ -239,20 +217,6 @@
 
 	<!-- distribution part -->
 	<distributionManagement>
-		<!-- repository -->
-		<!-- <repository> -->
-		<!-- <id>awired-repo</id> -->
-		<!-- <name>Awired Releases Repository</name> -->
-		<!-- <url>dav:http://mvn.awired.net/nexus/content/repositories/releases/</url> -->
-		<!-- </repository> -->
-		<!-- snapshot repository -->
-		<!-- <snapshotRepository> -->
-		<!-- <id>awired-snap-repo</id> -->
-		<!-- <name>Awired Snapshot Repository</name> -->
-		<!-- <url>dav:http://mvn.awired.net/nexus/content/repositories/snapshots/</url> -->
-		<!-- </snapshotRepository> -->
-
-
 		<repository>
 			<id>sonatype-nexus-staging</id>
 			<name>Nexus Release Repository</name>

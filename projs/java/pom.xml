@@ -1,22 +1,13 @@
-<!--
+<!-- Copyright (C) 2010 Awired.net Licensed under the Apache License, Version 
+	2.0 (the "License"); you may not use this file except in compliance with 
+	the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
+	Unless required by applicable law or agreed to in writing, software distributed 
+	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
+	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
+	the specific language governing permissions and limitations under the License. -->
 
-        Copyright (C) 2010 Awired.net
-
-        Licensed under the Apache License, Version 2.0 (the "License");
-        you may not use this file except in compliance with the License.
-        You may obtain a copy of the License at
-
-                http://www.apache.org/licenses/LICENSE-2.0
-
-        Unless required by applicable law or agreed to in writing, software
-        distributed under the License is distributed on an "AS IS" BASIS,
-        WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-        See the License for the specific language governing permissions and
-        limitations under the License.
-
--->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent.parent-java</groupId>
 	<artifactId>parent-java</artifactId>
@@ -89,11 +80,8 @@
 				<version>2.3.2</version>
 				<configuration>
 					<encoding>UTF-8</encoding>
-					<source>1.6</source>
-					<target>1.6</target>
-					<!-- <fork>true</fork> -->
-					<!-- <meminitial>256m</meminitial> -->
-					<!-- <maxmem>1024m</maxmem> -->
+					<source>${targetJdk}</source>
+					<target>${targetJdk}</target>
 				</configuration>
 			</plugin>
 
@@ -112,12 +100,12 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-<!-- 							<Project-Name>${project.name}</Project-Name> -->
-<!-- 							<Project-Version>${project.version}</Project-Version> -->
-<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
-<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
-<!-- 							<Project-Website>${project.url}</Project-Website> -->
-<!-- 							<Copyright>${project.organization.name}</Copyright> -->
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
+							<Project-Website>${project.url}</Project-Website>
+							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -129,17 +117,13 @@
 				<version>2.3.1</version>
 				<configuration>
 					<archive>
-						<manifest>
-<!-- 							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries> -->
-<!-- 							<addDefaultImplementationEntries>true</addDefaultImplementationEntries> -->
-						</manifest>
 						<manifestEntries>
-<!-- 							<Project-Name>${project.name}</Project-Name> -->
-<!-- 							<Project-Version>${project.version}</Project-Version> -->
-<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
-<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
-<!-- 							<Project-Website>${project.url}</Project-Website> -->
-<!-- 							<Copyright>${project.organization.name}</Copyright> -->
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
+							<Project-Website>${project.url}</Project-Website>
+							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
 				</configuration>
@@ -151,163 +135,29 @@
 				<configuration>
 					<archive>
 						<manifestEntries>
-<!-- 							<Project-Name>${project.name}</Project-Name> -->
-<!-- 							<Project-Version>${project.version}</Project-Version> -->
-<!-- 							<Project-Creator>${project.organization.name}</Project-Creator> -->
-<!-- 							<Project-CreatorId>${project.groupId}</Project-CreatorId> -->
-<!-- 							<Project-Website>${project.url}</Project-Website> -->
-<!-- 							<Copyright>${project.organization.name}</Copyright> -->
+							<Project-Name>${project.name}</Project-Name>
+							<Project-Version>${project.version}</Project-Version>
+							<Project-Creator>${project.organization.name}</Project-Creator>
+							<Project-CreatorId>${project.groupId}</Project-CreatorId>
+							<Project-Website>${project.url}</Project-Website>
+							<Copyright>${project.organization.name}</Copyright>
 						</manifestEntries>
 					</archive>
-				</configuration>
-			</plugin>
-
-			<!-- eclipse -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-eclipse-plugin</artifactId>
-				<version>2.8</version>
-				<configuration>
-					<additionalProjectnatures>
-						<!-- eclipse-cs 5.0 -->
-						<projectnature>net.sf.eclipsecs.core.CheckstyleNature</projectnature>
-						<!-- eclipse-cs 4.4.1 -->
-						<projectnature>com.atlassw.tools.eclipse.checkstyle.CheckstyleNature</projectnature>
-						<!-- PMD -->
-						<projectnature>net.sourceforge.pmd.eclipse.plugin.pmdNature</projectnature>
-						<!-- M2E -->
-						<projectnature>org.maven.ide.eclipse.maven2Nature</projectnature>
-					</additionalProjectnatures>
-					<additionalBuildcommands>
-						<!-- 5.0 -->
-						<buildcommand>net.sf.eclipsecs.core.CheckstyleBuilder</buildcommand>
-						<!-- eclipse-cs 4.4.1 -->
-						<buildcommand>com.atlassw.tools.eclipse.checkstyle.CheckstyleBuilder</buildcommand>
-						<!-- PMD -->
-						<buildcommand>net.sourceforge.pmd.eclipse.plugin.pmdBuilder</buildcommand>
-						<!-- M2E -->
-						<buildcommand>org.maven.ide.eclipse.maven2Builder</buildcommand>
-					</additionalBuildcommands>
-
-					<!-- classpath -->
-					<classpathContainers>
-						<classpathContainer>org.maven.ide.eclipse.MAVEN2_CLASSPATH_CONTAINER</classpathContainer>
-					</classpathContainers>
-
-					<downloadSources>true</downloadSources>
-					<downloadJavadocs>true</downloadJavadocs>
-					<wtpversion>2.0</wtpversion>
-					<additionalConfig>
-						<!-- checkstyle -->
-						<file>
-							<name>.checkstyle</name>
-							<location>checkstyle.conf</location>
-						</file>
-						<file>
-							<name>.settings/AWDCheckstyleRules.xml</name>
-							<location>AWDCheckstyleRules.xml</location>
-						</file>
-
-						<!-- pmd -->
-						<file>
-							<name>.pmd</name>
-							<location>pmd.conf</location>
-						</file>
-						<file>
-							<name>.settings/AWDPmdRules.conf</name>
-							<location>AWDPmdRules.xml</location>
-						</file>
-
-						<!-- formatter -->
-						<file>
-							<name>.settings/org.eclipse.jdt.core.prefs</name>
-							<location>AWDFormatterCodeStyle.conf</location>
-						</file>
-						<file>
-							<name>.settings/org.eclipse.jdt.ui.prefs</name>
-							<location>AWDFormatterProfile.conf</location>
-						</file>
-
-						<!-- Resources -->
-						<file>
-							<name>.settings/org.eclipse.core.resources.prefs</name>
-							<location>AWDResource.conf</location>
-						</file>
-						<file>
-							<name>.settings/org.eclipse.core.runtime.prefs</name>
-							<location>AWDResourceRuntime.conf</location>
-						</file>
-
-						<!-- CleanUp -->
-						<file>
-							<name>.settings/org.eclipse.jdt.ui.prefs</name>
-							<location>AWDCleanUp.conf</location>
-						</file>
-					</additionalConfig>
-				</configuration>
-				<dependencies>
-					<dependency>
-						<groupId>net.awired.parent</groupId>
-						<artifactId>parent-module-pmd</artifactId>
-						<version>${dep.project.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>net.awired.parent</groupId>
-						<artifactId>parent-module-checkstyle</artifactId>
-						<version>${dep.project.version}</version>
-					</dependency>
-					<dependency>
-						<groupId>net.awired.parent</groupId>
-						<artifactId>parent-module-eclipse</artifactId>
-						<version>${dep.project.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-site-plugin</artifactId>
-				<version>3.0-beta-3</version>
-				<configuration>
-					<reportPlugins>
-<!-- 						<plugin> -->
-<!-- 							<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 							<artifactId>maven-project-info-reports-plugin</artifactId> -->
-<!-- 							<version>2.3.1</version> -->
-<!-- 						</plugin> -->
-						<!-- bug
-						<plugin>
-							<groupId>org.apache.maven.plugins</groupId>
-							<artifactId>maven-javadoc-plugin</artifactId>
-							<version>2.7</version>
-						</plugin> -->
-<!-- 						<plugin> -->
-<!-- 							<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 							<artifactId>maven-jxr-plugin</artifactId> -->
-<!-- 							<version>2.2</version> -->
-<!-- 						</plugin> -->
-<!-- 						<plugin> -->
-<!-- 							<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 							<artifactId>maven-changelog-plugin</artifactId> -->
-<!-- 							<version>2.2</version> -->
-<!-- 						</plugin> -->
-<!-- 						<plugin> -->
-<!-- 							<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 							<artifactId>maven-changes-plugin</artifactId> -->
-<!-- 							<version>2.4</version> -->
-<!-- 						</plugin> -->
-<!-- 						<plugin> -->
-<!-- 							<groupId>org.apache.maven.plugins</groupId> -->
-<!-- 							<artifactId>maven-plugin-plugin</artifactId> -->
-<!-- 							<version>2.7</version> -->
-<!-- 						</plugin> -->
-					</reportPlugins>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 
 	<repositories>
+		<repository>
+			<id>central</id>
+			<name>Maven Repository Switchboard</name>
+			<layout>default</layout>
+			<url>http://repo1.maven.org/maven2</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
 		<repository>
 			<id>java.net</id>
 			<url>http://download.java.net/maven/2</url>
