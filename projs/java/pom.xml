@@ -29,7 +29,7 @@
 
 	<properties>
 		<targetJdk>1.6</targetJdk>
-		<checkstyle.version>2.6</checkstyle.version>
+		<checkstyle.version>2.7</checkstyle.version>
 		<pmd.version>2.5</pmd.version>
 	</properties>
 
@@ -114,7 +114,7 @@
 			<!-- jar -->
 			<plugin>
 				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.3.1</version>
+				<version>2.3.2</version>
 				<configuration>
 					<archive>
 						<manifestEntries>
