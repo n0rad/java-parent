@@ -74,7 +74,7 @@
 	<!-- continuous integration -->
 	<ciManagement>
 		<system>Jenkins</system>
-		<url>http://ci.awired.net/jenkins/job/Parent/</url>
+		<url>http://ci.awired.net/jenkins/job/${project.artifactId}/</url>
 		<notifiers>
 			<notifier>
 				<type>mail</type>
