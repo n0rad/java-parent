@@ -27,7 +27,7 @@
 	<parent>
 		<groupId>net.awired.parent</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.13</version>
+		<version>1.13-SNAPSHOT</version>
 		<relativePath>../../</relativePath>
 	</parent>
 

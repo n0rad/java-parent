@@ -12,7 +12,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.13</version>
+	<version>1.13-SNAPSHOT</version>
 
 	<name>Awired Parent</name>
 	<description><![CDATA[Awired.net is an open source community composed of IT engineers and Professionals working together on personal projects.
@@ -34,7 +34,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<dep.project.version>1.13</dep.project.version>
+		<dep.project.version>1.13-SNAPSHOT</dep.project.version>
 	</properties>
 
 	<prerequisites>
