@@ -22,8 +22,8 @@
 		<outputEncoding>UTF-8</outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		
-		<dep.project.version>${project.version}</dep.project.version>
+
+		<dep.project.version>1.15</dep.project.version>
 	</properties>
 
 	<prerequisites>
@@ -62,10 +62,10 @@
 			</notifier>
 		</notifiers>
 	</ciManagement>
-	
+
 	<modules>
-       <module>resources</module>
-       <module>java</module>
+		<module>resources</module>
+		<module>java</module>
 	</modules>
 
 	<build>
@@ -82,8 +82,8 @@
 					<useDefaultExcludes>false</useDefaultExcludes>
 					<encoding>UTF-8</encoding>
 					<includes>
-                       <include>src/main/**</include>
-                       <include>src/test/**</include>
+						<include>src/main/**</include>
+						<include>src/test/**</include>
 					</includes>
 					<executions>
 						<execution>
@@ -94,6 +94,13 @@
 						</execution>
 					</executions>
 				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>net.awired.parent</groupId>
+						<artifactId>parent-resources</artifactId>
+						<version>${dep.project.version}</version>
+					</dependency>
+				</dependencies>
 			</plugin>
 
 			<plugin>
