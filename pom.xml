@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<dep.project.version>1.15</dep.project.version>
+		<dep.project.version>1.15-SNAPSHOT</dep.project.version>
 	</properties>
 
 	<prerequisites>
@@ -77,23 +77,23 @@
 				<artifactId>maven-license-plugin</artifactId>
 				<version>1.9.0</version>
 				<configuration>
-					<header>modules/license/src/main/resources/license-header.txt</header>
+					<header>LICENSE-header.txt</header>
 					<strictCheck>true</strictCheck>
-					<useDefaultExcludes>false</useDefaultExcludes>
+					<useDefaultExcludes>true</useDefaultExcludes>
 					<encoding>UTF-8</encoding>
 					<includes>
 						<include>src/main/**</include>
 						<include>src/test/**</include>
 					</includes>
-					<executions>
-						<execution>
-							<phase>validate</phase>
-							<goals>
-								<goal>format</goal>
-							</goals>
-						</execution>
-					</executions>
 				</configuration>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
 				<dependencies>
 					<dependency>
 						<groupId>net.awired.parent</groupId>

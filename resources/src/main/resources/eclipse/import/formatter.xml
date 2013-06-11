@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!--
 
-        Copyright (C) 2010 Awired.net
+        Copyright (C) Awired.net
 
         Licensed under the Apache License, Version 2.0 (the "License");
         you may not use this file except in compliance with the License.
@@ -16,7 +16,6 @@
         limitations under the License.
 
 -->
-
 <profiles version="11">
 <profile kind="CodeFormatterProfile" name="formatter" version="11">
 <setting id="org.eclipse.jdt.core.formatter.comment.insert_new_line_before_root_tags" value="insert"/>
