@@ -87,8 +87,8 @@
 						<exclude>**/LICENSE-header.txt</exclude>
 					</excludes>
 					<includes>
-						<include>src/main/**</include>
-						<include>src/test/**</include>
+						<include>src/main/java/**</include>
+						<include>src/test/java/**</include>
 					</includes>
 				</configuration>
 				<executions>
