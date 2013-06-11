@@ -81,6 +81,7 @@
 					<strictCheck>true</strictCheck>
 					<useDefaultExcludes>true</useDefaultExcludes>
 					<encoding>UTF-8</encoding>
+					<quiet>true</quiet>
 					<includes>
 						<include>src/main/**</include>
 						<include>src/test/**</include>
