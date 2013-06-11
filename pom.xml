@@ -5,7 +5,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.15-SNAPSHOT</version>
+	<version>1.15</version>
 
 	<name>Awired Parent</name>
 	<description>Awired.net regroup some open source development by passionate developers</description>
@@ -23,8 +23,18 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<dep.project.version>1.15-SNAPSHOT</dep.project.version>
+		<dep.project.version>1.15</dep.project.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>net.awired.parent</groupId>
+				<artifactId>parent-resources</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<prerequisites>
 		<maven>3.0.3</maven>
@@ -42,7 +52,7 @@
 		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/awired/${project.artifactId}</url>
-		<tag>HEAD</tag>
+		<tag>parent-1.15</tag>
 	</scm>
 
 	<issueManagement>
@@ -73,42 +83,6 @@
 
 		<plugins>
 			<plugin>
-				<groupId>com.mycila.maven-license-plugin</groupId>
-				<artifactId>maven-license-plugin</artifactId>
-				<version>1.9.0</version>
-				<configuration>
-					<header>LICENSE-header.txt</header>
-					<strictCheck>true</strictCheck>
-					<useDefaultExcludes>true</useDefaultExcludes>
-					<aggregate>true</aggregate>
-					<encoding>UTF-8</encoding>
-					<quiet>true</quiet>
-					<excludes>
-						<exclude>**/LICENSE-header.txt</exclude>
-					</excludes>
-					<includes>
-						<include>src/main/java/**</include>
-						<include>src/test/java/**</include>
-					</includes>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>validate</phase>
-						<goals>
-							<goal>format</goal>
-						</goals>
-					</execution>
-				</executions>
-				<dependencies>
-					<dependency>
-						<groupId>net.awired.parent</groupId>
-						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
-					</dependency>
-				</dependencies>
-			</plugin>
-
-			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
 				<version>1.8.1</version>
@@ -125,31 +99,6 @@
 						<mavenExecutorId>forked-path</mavenExecutorId>
 						<useReleaseProfile>false</useReleaseProfile>
 						<arguments>-Psonatype-oss-release</arguments>
-					</configuration>
-				</plugin>
-
-				<plugin>
-					<groupId>org.eclipse.m2e</groupId>
-					<artifactId>lifecycle-mapping</artifactId>
-					<version>1.0.0</version>
-					<configuration>
-						<lifecycleMappingMetadata>
-							<pluginExecutions>
-								<pluginExecution>
-									<pluginExecutionFilter>
-										<groupId>com.mycila.maven-license-plugin</groupId>
-										<artifactId>maven-license-plugin</artifactId>
-										<versionRange>[1.9.0,)</versionRange>
-										<goals>
-											<goal>format</goal>
-										</goals>
-									</pluginExecutionFilter>
-									<action>
-										<ignore></ignore>
-									</action>
-								</pluginExecution>
-							</pluginExecutions>
-						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
 			</plugins>

@@ -1,4 +1,5 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>parent-java</artifactId>
 	<name>Awired Parent - Java</name>
@@ -7,7 +8,7 @@
 	<parent>
 		<groupId>net.awired.parent</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.15-SNAPSHOT</version>
+		<version>1.15</version>
 		<relativePath>../</relativePath>
 	</parent>
 
@@ -17,6 +18,43 @@
 
 	<build>
 		<plugins>
+			<plugin>
+				<groupId>com.mycila.maven-license-plugin</groupId>
+				<artifactId>maven-license-plugin</artifactId>
+				<version>1.9.0</version>
+				<configuration>
+					<header>LICENSE-header.txt</header>
+					<strictCheck>true</strictCheck>
+					<useDefaultExcludes>true</useDefaultExcludes>
+					<aggregate>true</aggregate>
+					<encoding>UTF-8</encoding>
+					<quiet>true</quiet>
+					<excludes>
+						<exclude>**/LICENSE-header.txt</exclude>
+					</excludes>
+					<includes>
+						<include>src/main/java/**</include>
+						<include>src/test/java/**</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>validate</phase>
+						<goals>
+							<goal>format</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>net.awired.parent</groupId>
+						<artifactId>parent-resources</artifactId>
+						<version>1.15</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
@@ -30,7 +68,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
+						<version>1.15</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -48,7 +86,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
+						<version>1.15</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -123,6 +161,34 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.mycila.maven-license-plugin</groupId>
+										<artifactId>maven-license-plugin</artifactId>
+										<versionRange>[1.9.0,)</versionRange>
+										<goals>
+											<goal>format</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
 	</build>
 
 	<repositories>
@@ -144,7 +210,7 @@
 			</snapshots>
 		</repository>
 	</repositories>
-	
+
 	<pluginRepositories>
 		<pluginRepository>
 			<id>central</id>
@@ -162,6 +228,6 @@
 			<snapshots>
 				<enabled>false</enabled>
 			</snapshots>
-		</pluginRepository>	
+		</pluginRepository>
 	</pluginRepositories>
 </project>
