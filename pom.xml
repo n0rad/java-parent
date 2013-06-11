@@ -4,7 +4,7 @@
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.16</version>
+	<version>1.17-SNAPSHOT</version>
 
 	<name>Awired Parent</name>
 	<description>Awired.net regroup some open source development by passionate developers</description>
