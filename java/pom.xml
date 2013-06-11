@@ -15,8 +15,7 @@
 
 	<properties>
 		<targetJdk>1.7</targetJdk>
-		<checkstyle.version>2.10</checkstyle.version>
-		<pmd.version>3.0.1</pmd.version>
+		<pmd.version></pmd.version>
 	</properties>
 
 	<build>
@@ -24,7 +23,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-checkstyle-plugin</artifactId>
-				<version>${checkstyle.version}</version>
+				<version>2.10</version>
 				<configuration>
 					<failOnViolation>true</failOnViolation>
 					<enableRulesSummary>true</enableRulesSummary>
@@ -42,7 +41,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-pmd-plugin</artifactId>
-				<version>${pmd.version}</version>
+				<version>3.0.1</version>
 				<configuration>
 					<rulesets>
 						<ruleset>AWDPmdRules.xml</ruleset>

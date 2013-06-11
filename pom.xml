@@ -42,6 +42,7 @@
 		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/awired/${project.artifactId}</url>
+		<tag>HEAD</tag>
 	</scm>
 
 	<issueManagement>
