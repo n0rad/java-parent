@@ -2,9 +2,9 @@ Awired Parent
 =============
 
 Awired parent project contain parent pom for all awired project.
-There is actually a parent pom for java project and a parent pom for OSGI bundle.
+There is actually a parent pom for projects
 
-The project also contain configuration project for :
+The project also contain resources project for :
 - checkstyle : to match eclipse formatter and our rules 
 - eclipse : formatter etc...
 - license : header for files

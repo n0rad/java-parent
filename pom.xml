@@ -1,13 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Copyright (C) 2010 Awired.net Licensed under the Apache License, Version 
-	2.0 (the "License"); you may not use this file except in compliance with 
-	the License. You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0 
-	Unless required by applicable law or agreed to in writing, software distributed 
-	under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES 
-	OR CONDITIONS OF ANY KIND, either express or implied. See the License for 
-	the specific language governing permissions and limitations under the License. -->
-
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>net.awired.parent</groupId>
 	<artifactId>parent</artifactId>
@@ -15,33 +8,28 @@
 	<version>1.15-SNAPSHOT</version>
 
 	<name>Awired Parent</name>
-	<description><![CDATA[Awired.net is an open source community composed of IT engineers and Professionals working together on personal projects.
- Our goal is to provide high quality softwares by using latest tools in application design and code analyze, and also by taking as much time as needed to ensure the best.]]></description>
+	<description>Awired.net regroup some open source development by passionate developers</description>
 	<url>http://awired.net/</url>
 
-	<!-- organisation -->
 	<organization>
-		<name>Awired Network</name>
-		<url>http://awired.net/</url>
+		<name>Awired.net</name>
+		<url>http://awired.net</url>
 	</organization>
 
-	<!-- default properties -->
 	<properties>
-		<organization.logo>http://gl.awired.net/images/logo/awired.net-full-b.png</organization.logo>
-
+		<organization.logo>http://awired.net/images/logo/awired.net-full-b.png</organization.logo>
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<outputEncoding>UTF-8</outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<dep.project.version>1.14</dep.project.version>
+		
+		<dep.project.version>${project.version}</dep.project.version>
 	</properties>
 
 	<prerequisites>
-		<maven>3.0.2</maven>
+		<maven>3.0.3</maven>
 	</prerequisites>
 
-	<!-- licence -->
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -50,28 +38,17 @@
 		</license>
 	</licenses>
 
-	<developers>
-		<developer>
-			<id>n0rad</id>
-			<name>Arnaud LEMAIRE</name>
-			<email>dev@norad.fr</email>
-		</developer>
-	</developers>
-
-	<!-- scm -->
 	<scm>
 		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/awired/${project.artifactId}</url>
 	</scm>
 
-	<!-- bugtracker -->
 	<issueManagement>
 		<system>Github</system>
 		<url>https://github.com/awired/${project.artifactId}/issues</url>
 	</issueManagement>
 
-	<!-- continuous integration -->
 	<ciManagement>
 		<system>Jenkins</system>
 		<url>http://ci.awired.net/jenkins/job/${project.name}/</url>
@@ -79,60 +56,19 @@
 			<notifier>
 				<type>mail</type>
 				<configuration>
-					<address>dev@awired.net</address>
+					<address>contact@awired.net</address>
 				</configuration>
 			</notifier>
 		</notifiers>
 	</ciManagement>
-
-
-	<!-- modules -->
+	
 	<modules>
-		<module>modules/checkstyle</module>
-		<module>modules/eclipse</module>
-		<module>modules/pmd</module>
-		<module>modules/license</module>
-
-		<module>projs/java</module>
+       <module>resources</module>
+       <module>java</module>
 	</modules>
 
-	<!-- dependency management -->
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-module-checkstyle</artifactId>
-				<version>${dep.project.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-module-eclipse</artifactId>
-				<version>${dep.project.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-module-pmd</artifactId>
-				<version>${dep.project.version}</version>
-				<scope>provided</scope>
-			</dependency>
-			<dependency>
-				<groupId>net.awired.parent</groupId>
-				<artifactId>parent-module-license</artifactId>
-				<version>${dep.project.version}</version>
-				<scope>provided</scope>
-			</dependency>
-
-			<dependency>
-				<groupId>net.awired.parent.parent-java</groupId>
-				<artifactId>parent-java</artifactId>
-				<version>${project.version}</version>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
-
 	<build>
-		<defaultGoal>clean install</defaultGoal>
+		<defaultGoal>clean verify</defaultGoal>
 
 		<plugins>
 			<plugin>
@@ -143,43 +79,26 @@
 					<header>modules/license/src/main/resources/license-header.txt</header>
 					<strictCheck>true</strictCheck>
 					<useDefaultExcludes>false</useDefaultExcludes>
-					<excludes>
-						<exclude>**/*.png</exclude>
-						<exclude>.metadata/**</exclude>
-						<exclude>.gitignore</exclude>
-						<exclude>.git/**</exclude>
-						<exclude>target/**</exclude>
-						<exclude>.settings/**</exclude>
-						<exclude>.project</exclude>
-						<exclude>.classpath</exclude>
-						<exclude>LICENCE</exclude>
-						<exclude>README</exclude>
-						<exclude>**/MANIFEST.MF</exclude>
-						<exclude>src/main/webapp/WEB-INF/lib/**</exclude>
-						<exclude>src/main/webapp/WEB-INF/classes/**</exclude>
-						<exclude>src/main/webapp/images/**</exclude>
-						<exclude>src/main/webapp/img/**</exclude>
-						<exclude>.externalToolBuilders/**</exclude>
-						<exclude>.pmd/**</exclude>
-						<exclude>src/test/resources/**</exclude>
-						<exclude>src/main/xsd/**</exclude>
-						<exclude>infinitest.filters</exclude>
-					</excludes>
+					<encoding>UTF-8</encoding>
+					<includes>
+                       <include>src/main/**</include>
+                       <include>src/test/**</include>
+					</includes>
 					<executions>
 						<execution>
+							<phase>validate</phase>
 							<goals>
-								<goal>check</goal>
+								<goal>format</goal>
 							</goals>
 						</execution>
 					</executions>
 				</configuration>
 			</plugin>
 
-			<!-- scm -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-scm-plugin</artifactId>
-				<version>1.6</version>
+				<version>1.8.1</version>
 			</plugin>
 		</plugins>
 
@@ -188,7 +107,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
-					<version>2.2.1</version>
+					<version>2.4.1</version>
 					<configuration>
 						<mavenExecutorId>forked-path</mavenExecutorId>
 						<useReleaseProfile>false</useReleaseProfile>
@@ -198,7 +117,7 @@
 			</plugins>
 		</pluginManagement>
 	</build>
-	
+
 	<!-- avoid using release repo -->
 	<pluginRepositories>
 		<pluginRepository>
@@ -227,7 +146,6 @@
 		</repository>
 	</repositories>
 
-	<!-- distribution part -->
 	<distributionManagement>
 		<repository>
 			<id>sonatype-nexus-staging</id>
@@ -249,7 +167,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-source-plugin</artifactId>
-						<version>2.1.2</version>
+						<version>2.2.1</version>
 						<executions>
 							<execution>
 								<id>attach-sources</id>
@@ -262,7 +180,7 @@
 					<plugin>
 						<groupId>org.apache.maven.plugins</groupId>
 						<artifactId>maven-javadoc-plugin</artifactId>
-						<version>2.8.1</version>
+						<version>2.9</version>
 						<executions>
 							<execution>
 								<id>attach-javadocs</id>
