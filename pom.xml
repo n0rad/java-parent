@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<dep.project.version>1.15</dep.project.version>
+		<dep.project.version>1.16</dep.project.version>
 	</properties>
 
 	<dependencyManagement>
@@ -61,7 +61,6 @@
 		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/awired/${project.artifactId}</url>
-		<tag>parent-1.15</tag>
 	</scm>
 
 	<issueManagement>
