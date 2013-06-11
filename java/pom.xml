@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>net.awired.parent</groupId>
 		<artifactId>parent</artifactId>
-		<version>1.16-SNAPSHOT</version>
+		<version>1.16</version>
 		<relativePath>../</relativePath>
 	</parent>
 
@@ -48,7 +48,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
+						<version>1.16</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -67,7 +67,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
+						<version>1.16</version>
 					</dependency>
 				</dependencies>
 			</plugin>
@@ -85,7 +85,7 @@
 					<dependency>
 						<groupId>net.awired.parent</groupId>
 						<artifactId>parent-resources</artifactId>
-						<version>${dep.project.version}</version>
+						<version>1.16</version>
 					</dependency>
 				</dependencies>
 			</plugin>
