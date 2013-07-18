@@ -1,7 +1,7 @@
-Awired Parent
-=============
+n0rad's Parent project
+======================
 
-Awired parent project contain parent pom for all awired project.
+It contain parent pom for all my projects.
 There is actually a parent pom for projects
 
 The project also contain resources project for :

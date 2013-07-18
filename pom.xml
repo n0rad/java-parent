@@ -1,32 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>net.awired.parent</groupId>
+	<groupId>fr.norad.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
 	<version>1.17-SNAPSHOT</version>
 
-	<name>Awired Parent</name>
-	<description>Awired.net regroup some open source development by passionate developers</description>
-	<url>http://awired.net/</url>
-
-	<organization>
-		<name>Awired.net</name>
-		<url>http://awired.net</url>
-	</organization>
+	<name>n0rad Parent</name>
+	<url>http://norad.fr</url>
 
 	<properties>
-		<organization.logo>http://awired.net/images/logo/awired.net-full-b.png</organization.logo>
 		<sourceEncoding>UTF-8</sourceEncoding>
 		<outputEncoding>UTF-8</outputEncoding>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
+	<organization>
+		<name>n0rad</name>
+		<url>http://norad.fr</url>
+	</organization>
+
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>net.awired.parent</groupId>
+				<groupId>fr.norad.parent</groupId>
 				<artifactId>parent-resources</artifactId>
 				<version>${project.version}</version>
 			</dependency>
@@ -55,25 +53,25 @@
 	</licenses>
 
 	<scm>
-		<connection>scm:git:git://github.com/awired/${project.artifactId}.git</connection>
-		<developerConnection>scm:git:git@github.com:awired/${project.artifactId}.git</developerConnection>
-		<url>https://github.com/awired/${project.artifactId}</url>
+		<connection>scm:git:git://github.com/n0rad/${project.artifactId}.git</connection>
+		<developerConnection>scm:git:git@github.com:n0rad/${project.artifactId}.git</developerConnection>
+		<url>https://github.com/n0rad/${project.artifactId}</url>
 	  <tag>parent-1.16</tag>
   </scm>
 
 	<issueManagement>
 		<system>Github</system>
-		<url>https://github.com/awired/${project.artifactId}/issues</url>
+		<url>https://github.com/n0rad/${project.artifactId}/issues</url>
 	</issueManagement>
 
 	<ciManagement>
 		<system>Jenkins</system>
-		<url>http://ci.awired.net/jenkins/job/${project.name}/</url>
+		<url>http://ci.norad.fr/jenkins/job/${project.name}/</url>
 		<notifiers>
 			<notifier>
 				<type>mail</type>
 				<configuration>
-					<address>contact@awired.net</address>
+					<address>dev@norad.fr</address>
 				</configuration>
 			</notifier>
 		</notifiers>

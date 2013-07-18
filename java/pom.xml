@@ -1,11 +1,11 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>parent-java</artifactId>
-	<name>Awired Parent - Java</name>
+	<name>n0rad Parent - Java</name>
 	<packaging>pom</packaging>
 
 	<parent>
-		<groupId>net.awired.parent</groupId>
+		<groupId>fr.norad.parent</groupId>
 		<artifactId>parent</artifactId>
 		<version>1.17-SNAPSHOT</version>
 		<relativePath>../</relativePath>
@@ -46,7 +46,7 @@
 				</executions>
 				<dependencies>
 					<dependency>
-						<groupId>net.awired.parent</groupId>
+						<groupId>fr.norad.parent</groupId>
 						<artifactId>parent-resources</artifactId>
 						<version>1.17-SNAPSHOT</version>
 					</dependency>
@@ -61,11 +61,11 @@
 				<configuration>
 					<failOnViolation>true</failOnViolation>
 					<enableRulesSummary>true</enableRulesSummary>
-					<configLocation>AWDCheckstyleRules.xml</configLocation>
+					<configLocation>CheckstyleRules.xml</configLocation>
 				</configuration>
 				<dependencies>
 					<dependency>
-						<groupId>net.awired.parent</groupId>
+						<groupId>fr.norad.parent</groupId>
 						<artifactId>parent-resources</artifactId>
 						<version>1.17-SNAPSHOT</version>
 					</dependency>
@@ -78,12 +78,12 @@
 				<version>3.0.1</version>
 				<configuration>
 					<rulesets>
-						<ruleset>AWDPmdRules.xml</ruleset>
+						<ruleset>PmdRules.xml</ruleset>
 					</rulesets>
 				</configuration>
 				<dependencies>
 					<dependency>
-						<groupId>net.awired.parent</groupId>
+						<groupId>fr.norad.parent</groupId>
 						<artifactId>parent-resources</artifactId>
 						<version>1.17-SNAPSHOT</version>
 					</dependency>

@@ -3,10 +3,10 @@
     <artifactId>parent-resources</artifactId>
     <packaging>jar</packaging>
 
-    <name>Awired Parent - Resources</name>
+    <name>n0rad Parent - Resources</name>
 
     <parent>
-        <groupId>net.awired.parent</groupId>
+        <groupId>fr.norad.parent</groupId>
         <artifactId>parent</artifactId>
         <version>1.17-SNAPSHOT</version>
         <relativePath>../</relativePath>
