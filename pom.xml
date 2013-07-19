@@ -4,7 +4,7 @@
 	<groupId>fr.norad.parent</groupId>
 	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>1.18-SNAPSHOT</version>
+	<version>1.18</version>
 	<description>n0rad's parent project</description>
 
 	<name>n0rad Parent</name>
@@ -57,7 +57,7 @@
 		<connection>scm:git:git://github.com/n0rad/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:n0rad/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/n0rad/${project.artifactId}</url>
-    <tag>HEAD</tag>
+    <tag>parent-1.18</tag>
   </scm>
 
 	<issueManagement>
