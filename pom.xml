@@ -56,7 +56,6 @@
 		<connection>scm:git:git://github.com/n0rad/${project.artifactId}.git</connection>
 		<developerConnection>scm:git:git@github.com:n0rad/${project.artifactId}.git</developerConnection>
 		<url>https://github.com/n0rad/${project.artifactId}</url>
-	  <tag>parent-1.16</tag>
   </scm>
 
 	<issueManagement>
