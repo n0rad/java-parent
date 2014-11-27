@@ -8,7 +8,7 @@
     <parent>
         <groupId>fr.norad.parent</groupId>
         <artifactId>parent</artifactId>
-        <version>1.19-SNAPSHOT</version>
+        <version>1.19</version>
         <relativePath>../</relativePath>
     </parent>
 
